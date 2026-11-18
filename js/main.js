@@ -96,6 +96,18 @@
     });
   }
 
+  // Toggle para mostrar/ocultar Booking Bar de la portada
+  const toggleBookingBarBtn = document.getElementById('btn-toggle-booking-bar');
+  const heroBookingBar = document.getElementById('hero-booking-bar');
+  if (toggleBookingBarBtn && heroBookingBar) {
+    toggleBookingBarBtn.addEventListener('click', () => {
+      const isOpen = heroBookingBar.classList.toggle('is-open');
+      toggleBookingBarBtn.setAttribute('aria-expanded', String(isOpen));
+      const icon = toggleBookingBarBtn.querySelector('.booking-toggle-icon');
+      if (icon) icon.textContent = isOpen ? '▲' : '▼';
+    });
+  }
+
   // Toggle desplegable del formulario de reserva
   const toggleReservaBtn = document.getElementById('btn-toggle-reserva');
   const formWrapper = document.getElementById('form-wrapper');
