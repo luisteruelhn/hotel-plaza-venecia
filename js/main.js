@@ -211,6 +211,7 @@
   if (formEvento) {
     formEvento.addEventListener('submit', (e) => {
       e.preventDefault();
+      const nombre = document.getElementById('ev-nombre')?.value.trim();
       const tipo = evTipo ? evTipo.value : 'Evento';
       const detalleOtro = evOtro ? evOtro.value.trim() : '';
       const personas = document.getElementById('ev-personas')?.value.trim();
@@ -218,6 +219,10 @@
       const hora = document.getElementById('ev-hora')?.value;
       const proyector = document.getElementById('ev-proyector')?.value;
 
+      if (!nombre) {
+        if (evMsg) evMsg.textContent = 'Por favor ingresa tu nombre, empresa o institución.';
+        return;
+      }
       if (tipo === 'Otro' && !detalleOtro) {
         if (evMsg) evMsg.textContent = 'Por favor especifica el tipo o motivo del evento.';
         return;
@@ -231,6 +236,7 @@
       const tipoFinal = tipo === 'Otro' ? `Otro (${detalleOtro})` : tipo;
       const textoEvento = [
         'Hola Hotel Plaza Venecia, quisiera cotizar un salón para evento:',
+        `• Nombre / Empresa / Institución: ${nombre}`,
         `• Tipo de evento: ${tipoFinal}`,
         `• Cantidad de personas: ${personas}`,
         `• Fecha: ${fecha}`,
