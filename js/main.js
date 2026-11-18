@@ -73,6 +73,74 @@
   }
   startAutoSlide();
 
+  // ===== Galería Deslizante estilo Holiday Inn ("La galería que pasa") =====
+  const hiTrack = document.getElementById('hi-gallery-track');
+  const hiCards = document.querySelectorAll('.hi-gallery__card');
+  const hiTabs = document.querySelectorAll('.hi-gallery__tab');
+  const hiPrev = document.getElementById('hi-prev');
+  const hiNext = document.getElementById('hi-next');
+  const hiCounter = document.getElementById('hi-counter');
+  const hiProgress = document.getElementById('hi-progress');
+  const hiViewport = document.getElementById('hi-gallery-viewport');
+  let hiIndex = 0;
+  let hiTimer = null;
+
+  const updateHiGallery = (newIdx) => {
+    if (!hiTrack || !hiCards.length) return;
+    hiIndex = (newIdx + hiCards.length) % hiCards.length;
+    hiCards.forEach((c, i) => c.classList.toggle('is-active', i === hiIndex));
+    hiTabs.forEach((t, i) => t.classList.toggle('is-active', i === hiIndex));
+
+    const activeCard = hiCards[hiIndex];
+    const viewportWidth = hiViewport ? hiViewport.clientWidth : window.innerWidth;
+    const cardLeft = activeCard.offsetLeft;
+    const cardWidth = activeCard.offsetWidth;
+    const offset = cardLeft - (viewportWidth - cardWidth) / 2;
+    hiTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+
+    if (hiCounter) {
+      hiCounter.textContent = `0${hiIndex + 1} / 0${hiCards.length}`;
+    }
+    if (hiProgress) {
+      hiProgress.style.width = `${((hiIndex + 1) / hiCards.length) * 100}%`;
+    }
+  };
+
+  const startHiAuto = () => {
+    stopHiAuto();
+    hiTimer = setInterval(() => updateHiGallery(hiIndex + 1), 4500);
+  };
+  const stopHiAuto = () => {
+    if (hiTimer) clearInterval(hiTimer);
+  };
+
+  if (hiTrack && hiCards.length) {
+    if (hiPrev) hiPrev.addEventListener('click', () => { updateHiGallery(hiIndex - 1); startHiAuto(); });
+    if (hiNext) hiNext.addEventListener('click', () => { updateHiGallery(hiIndex + 1); startHiAuto(); });
+    hiTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        updateHiGallery(Number(tab.dataset.idx));
+        startHiAuto();
+      });
+    });
+    hiCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const idx = Number(card.dataset.idx);
+        if (idx !== hiIndex) {
+          updateHiGallery(idx);
+          startHiAuto();
+        }
+      });
+    });
+    if (hiViewport) {
+      hiViewport.addEventListener('mouseenter', stopHiAuto);
+      hiViewport.addEventListener('mouseleave', startHiAuto);
+    }
+    window.addEventListener('resize', () => updateHiGallery(hiIndex), { passive: true });
+    requestAnimationFrame(() => updateHiGallery(0));
+    startHiAuto();
+  }
+
   // ===== Booking Bar rápida =====
   const bbHabitacion = document.getElementById('bb-habitacion');
   const bbLlegada = document.getElementById('bb-llegada');
