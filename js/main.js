@@ -284,7 +284,26 @@
   const roomsListEl = document.getElementById('f-rooms-list');
   const selHab = document.getElementById('f-habitacion');
   const inpCantHab = document.getElementById('f-cant-hab');
+  const inpPersonas = document.getElementById('f-personas');
+  const hintPersonas = document.getElementById('f-personas-hint');
   const selectedRooms = new Map();
+  let personasEditedManually = false;
+
+  const ROOM_CAP = { Sencilla: 1, Doble: 2, Triple: 3, Suite: 2, 'Tarifa Corporativa': 1 };
+
+  const getRoomsSummary = () => {
+    let totalRooms = 0;
+    let suggestedGuests = 0;
+    selectedRooms.forEach((qty, type) => {
+      totalRooms += qty;
+      suggestedGuests += qty * (ROOM_CAP[type] || 1);
+    });
+    return { totalRooms, suggestedGuests };
+  };
+
+  if (inpPersonas) {
+    inpPersonas.addEventListener('input', () => { personasEditedManually = true; });
+  }
 
   const renderRoomsChips = () => {
     if (!roomsListEl) return;
@@ -295,6 +314,20 @@
       chip.innerHTML = `<strong>${qty}×</strong> ${type} <button type="button" data-remove="${type}" aria-label="Quitar ${type}">&times;</button>`;
       roomsListEl.appendChild(chip);
     });
+
+    const { totalRooms, suggestedGuests } = getRoomsSummary();
+    if (totalRooms > 0) {
+      if (inpPersonas && !personasEditedManually) {
+        inpPersonas.value = String(suggestedGuests);
+      }
+      if (hintPersonas) {
+        hintPersonas.style.display = 'block';
+        hintPersonas.textContent = `Sugerencia: ${suggestedGuests} ${suggestedGuests === 1 ? 'persona' : 'personas'} para ${totalRooms} ${totalRooms === 1 ? 'habitación' : 'habitaciones'}.`;
+      }
+    } else if (hintPersonas) {
+      hintPersonas.style.display = 'none';
+      hintPersonas.textContent = '';
+    }
   };
 
   if (btnAddRoom && selHab && inpCantHab) {
@@ -329,13 +362,29 @@
     msg.textContent = '';
 
     let detalleHabitaciones = '';
+    let totalRooms = 0;
     if (selectedRooms.size > 0) {
       const items = [];
-      selectedRooms.forEach((qty, type) => items.push(`${qty} ${type}`));
+      selectedRooms.forEach((qty, type) => {
+        items.push(`${qty} ${type}`);
+        totalRooms += qty;
+      });
       detalleHabitaciones = items.join(', ');
     } else {
       const qtyActual = Math.max(1, parseInt(inpCantHab ? inpCantHab.value : '1', 10) || 1);
+      totalRooms = qtyActual;
       detalleHabitaciones = `${qtyActual} ${val('f-habitacion')}`;
+    }
+
+    const totalPersonas = Math.max(1, parseInt(val('f-personas'), 10) || 1);
+    if (totalPersonas < totalRooms) {
+      const seguro = window.confirm(
+        `Seleccionaste ${totalRooms} habitaciones (${detalleHabitaciones}) pero indicaste ${totalPersonas} ${totalPersonas === 1 ? 'persona' : 'personas'}.\n\n¿Estás seguro de que el total de personas es correcto antes de enviar la solicitud?`
+      );
+      if (!seguro) {
+        if (inpPersonas) inpPersonas.focus();
+        return;
+      }
     }
 
     const texto = [
