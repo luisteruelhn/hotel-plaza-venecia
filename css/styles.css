@@ -85,11 +85,36 @@ em { font-style: italic; color: var(--dorado); }
 .nav__toggle[aria-expanded="true"] span:last-child { top: 11px; transform: rotate(-45deg); }
 .nav__toggle { color: inherit; }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero Slider ---------- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; color: var(--blanco); overflow: hidden; }
-.hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center 35%; transform: scale(1.08); animation: heroZoom 18s ease-out forwards; }
-.hero__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(19, 38, 74, .9) 0%, rgba(19, 38, 74, .6) 45%, rgba(0, 0, 0, .1) 100%); }
-@keyframes heroZoom { to { transform: scale(1); } }
+.hero__slider { position: absolute; inset: 0; }
+.hero__slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity .9s ease-in-out, transform 6s ease-out; transform: scale(1.05); }
+.hero__slide.is-active { opacity: 1; transform: scale(1); }
+.hero__slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(19, 38, 74, .92) 0%, rgba(19, 38, 74, .68) 50%, rgba(0, 0, 0, .25) 100%); }
+.hero__slide-tag { position: absolute; top: 5.5rem; right: 2rem; z-index: 2; background: rgba(19, 38, 74, .75); backdrop-filter: blur(8px); border: 1px solid var(--dorado); color: var(--dorado); font-size: .8rem; font-weight: 600; padding: .4rem .9rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; }
+
+.hero__arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, .15); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .3); color: var(--blanco); width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; transition: background .3s, transform .2s; font-size: 1.1rem; }
+.hero__arrow:hover { background: var(--terracota); border-color: var(--terracota); transform: translateY(-50%) scale(1.08); }
+.hero__arrow--prev { left: 1.2rem; }
+.hero__arrow--next { right: 1.2rem; }
+
+.hero__dots { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: .6rem; }
+.hero__dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--blanco); background: transparent; cursor: pointer; transition: background .3s, transform .3s; }
+.hero__dot.is-active { background: var(--dorado); border-color: var(--dorado); transform: scale(1.25); }
+
+/* Booking Bar (Estilo Cadena Hotelera) */
+.booking-bar { margin-top: 2rem; background: rgba(255, 255, 255, .95); backdrop-filter: blur(12px); border-radius: var(--radius); padding: 1rem 1.4rem; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto; gap: 1rem; align-items: flex-end; border: 1px solid var(--arena); color: var(--carbon); }
+.booking-bar__item { display: flex; flex-direction: column; gap: .35rem; }
+.booking-bar__item label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--verde-dark); }
+.booking-bar__item input, .booking-bar__item select { font: 500 .92rem var(--font-body); padding: .65rem .8rem; border-radius: var(--radius-sm); border: 1.5px solid var(--arena); background: var(--crema); color: var(--carbon); }
+.booking-bar__item input:focus, .booking-bar__item select:focus { outline: none; border-color: var(--terracota); }
+.booking-bar__action .btn { width: 100%; white-space: nowrap; height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+@media (max-width: 768px) {
+  .hero__arrow { display: none; }
+  .hero__slide-tag { display: none; }
+  .booking-bar { grid-template-columns: 1fr; }
+}
 .hero__content { position: relative; z-index: 1; padding-top: 5rem; max-width: 1180px; }
 .hero .eyebrow { color: var(--dorado); }
 .hero__lead { font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 540px; margin: 1.4rem 0 2.2rem; opacity: .92; }
