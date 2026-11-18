@@ -733,22 +733,22 @@ em {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: .55rem;
   width: 100%;
-  padding: .68rem 1rem;
+  padding: .78rem 1rem;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--terracota);
   border: 1.5px solid rgba(179, 32, 46, .45);
-  font-weight: 600;
-  font-size: .92rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
 }
 
 .room__body .link::before {
   content: '💬';
-  font-size: .95rem;
-  margin-right: .45rem;
+  font-size: 1.1rem;
 }
 
 .room__body .link:hover,
