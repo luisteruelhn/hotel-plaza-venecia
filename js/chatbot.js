@@ -57,9 +57,9 @@
         'Puedes reservar fácilmente enviándonos un mensaje por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a> o usando el formulario de reserva en la sección de Contacto.'
     },
     {
-      keywords: ['seguro', 'seguridad', 'familia', 'familiar', 'estacionamiento', 'parqueo', 'recepcion'],
+      keywords: ['seguro', 'seguridad', 'familia', 'familiar', 'estacionamiento', 'parqueo', 'recepcion', 'carro', 'vehiculo', 'auto'],
       reply:
-        'En Hotel Plaza Venecia priorizamos un ambiente <strong>seguro, céntrico y familiar</strong>, con atención cercana en recepción para que disfrutes tu estadía como en casa.'
+        'En Hotel Plaza Venecia contamos con <strong>estacionamiento propio</strong> y priorizamos un ambiente <strong>seguro, céntrico y familiar</strong>, con atención cercana en recepción.'
     },
     {
       keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia'],
