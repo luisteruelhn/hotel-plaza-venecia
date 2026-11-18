@@ -59,6 +59,17 @@
         .contact__form-wrapper .form { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem !important; }
         .contact__form-wrapper .form__msg:empty { display: none; }
       }
+      /* Mini formulario desplegable de Eventos */
+      .evento-form-wrap { max-height: 0; opacity: 0; overflow: hidden; pointer-events: none; transition: max-height .45s cubic-bezier(0.4, 0, 0.2, 1), opacity .35s ease, margin .35s ease; }
+      .evento-form-wrap.is-open { max-height: 750px; opacity: 1; pointer-events: auto; margin-top: 1.2rem; }
+      .evento-form { background: var(--blanco); color: var(--carbon); padding: 1.35rem 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1.5px solid var(--dorado); display: grid; gap: .85rem; }
+      .evento-form label { display: grid; gap: .3rem; font-size: .82rem; font-weight: 600; color: var(--verde-dark); }
+      .evento-form input, .evento-form select { font: 400 .92rem var(--font-body); padding: .6rem .8rem; border-radius: var(--radius-sm); border: 1.5px solid var(--arena); background: var(--crema); color: var(--carbon); }
+      .evento-form input:focus, .evento-form select:focus { outline: none; border-color: var(--dorado); }
+      .evento-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+      .evento-form__note { font-size: .8rem; color: var(--gris); margin: 0; font-style: italic; line-height: 1.4; }
+      .evento-form__otro[hidden] { display: none; }
+      @media (max-width: 520px) { .evento-form__row { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
   {
@@ -416,8 +427,60 @@
             <li>Reuniones y capacitaciones empresariales</li>
             <li>Servicio de comida y bebidas</li>
           </ul>
-          <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20cotizar%20un%20evento" class="btn btn--light"
-            target="_blank" rel="noopener" id="btn-eventos">Cotizar mi evento</a>
+          <button type="button" class="btn btn--light" id="btn-eventos" aria-expanded="false" aria-controls="evento-form-wrap">
+            <span id="btn-eventos-text">Cotizar mi evento</span>
+            <span id="btn-eventos-icon" style="font-size:.78rem;">▼</span>
+          </button>
+
+          <div class="evento-form-wrap" id="evento-form-wrap">
+            <form class="evento-form" id="form-evento" novalidate>
+              <div class="evento-form__row">
+                <label>Tipo de evento
+                  <select id="ev-tipo" required>
+                    <option value="Cumpleaños">Cumpleaños</option>
+                    <option value="Boda">Boda</option>
+                    <option value="Bautismo">Bautismo</option>
+                    <option value="Graduación">Graduación</option>
+                    <option value="Reunión / Capacitación">Reunión / Capacitación</option>
+                    <option value="Otro">Otro (especificar)</option>
+                  </select>
+                </label>
+                <label>Cantidad de personas
+                  <input type="number" id="ev-personas" min="1" max="500" value="30" required placeholder="Ej. 50">
+                </label>
+              </div>
+
+              <label class="evento-form__otro" id="ev-otro-wrap" hidden>Especifique el tipo o motivo del evento
+                <input type="text" id="ev-otro" placeholder="Ej. Aniversario, taller corporativo, cena navideña...">
+              </label>
+
+              <div class="evento-form__row">
+                <label>Fecha del evento
+                  <input type="date" id="ev-fecha" required>
+                </label>
+                <label>Hora aproximada
+                  <input type="time" id="ev-hora" required>
+                </label>
+              </div>
+
+              <label>¿Incluye proyector multimedia?
+                <select id="ev-proyector">
+                  <option value="No requiere">No requiere proyector</option>
+                  <option value="Sí, incluir proyector multimedia">Sí, incluir proyector multimedia</option>
+                </select>
+              </label>
+
+              <p class="evento-form__note">* Los demás detalles (menú, montaje y equipamiento adicional) los veremos directamente al contactarte.</p>
+              <p class="form__msg" id="ev-msg" role="status" style="margin:0;"></p>
+
+              <button type="submit" class="btn btn--block btn--whatsapp">
+                <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+                  <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z" />
+                </svg>
+                Enviar cotización por WhatsApp
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

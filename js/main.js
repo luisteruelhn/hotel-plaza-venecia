@@ -176,6 +176,73 @@
     });
   }
 
+  // Toggle desplegable y envío del mini formulario de Eventos
+  const btnEventos = document.getElementById('btn-eventos');
+  const eventoWrap = document.getElementById('evento-form-wrap');
+  const formEvento = document.getElementById('form-evento');
+  const evTipo = document.getElementById('ev-tipo');
+  const evOtroWrap = document.getElementById('ev-otro-wrap');
+  const evOtro = document.getElementById('ev-otro');
+  const evFecha = document.getElementById('ev-fecha');
+  const evMsg = document.getElementById('ev-msg');
+
+  if (evFecha) evFecha.min = hoyStr;
+
+  if (btnEventos && eventoWrap) {
+    btnEventos.addEventListener('click', () => {
+      const isOpen = eventoWrap.classList.toggle('is-open');
+      btnEventos.setAttribute('aria-expanded', String(isOpen));
+      const icon = document.getElementById('btn-eventos-icon');
+      const txt = document.getElementById('btn-eventos-text');
+      if (icon) icon.textContent = isOpen ? '▲' : '▼';
+      if (txt) txt.textContent = isOpen ? 'Ocultar cotizador' : 'Cotizar mi evento';
+    });
+  }
+
+  if (evTipo && evOtroWrap && evOtro) {
+    evTipo.addEventListener('change', () => {
+      const isOtro = evTipo.value === 'Otro';
+      evOtroWrap.hidden = !isOtro;
+      evOtro.required = isOtro;
+      if (isOtro) evOtro.focus();
+    });
+  }
+
+  if (formEvento) {
+    formEvento.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const tipo = evTipo ? evTipo.value : 'Evento';
+      const detalleOtro = evOtro ? evOtro.value.trim() : '';
+      const personas = document.getElementById('ev-personas')?.value.trim();
+      const fecha = evFecha ? evFecha.value : '';
+      const hora = document.getElementById('ev-hora')?.value;
+      const proyector = document.getElementById('ev-proyector')?.value;
+
+      if (tipo === 'Otro' && !detalleOtro) {
+        if (evMsg) evMsg.textContent = 'Por favor especifica el tipo o motivo del evento.';
+        return;
+      }
+      if (!personas || !fecha || !hora) {
+        if (evMsg) evMsg.textContent = 'Por favor completa la cantidad de personas, fecha y hora.';
+        return;
+      }
+      if (evMsg) evMsg.textContent = '';
+
+      const tipoFinal = tipo === 'Otro' ? `Otro (${detalleOtro})` : tipo;
+      const textoEvento = [
+        'Hola Hotel Plaza Venecia, quisiera cotizar un salón para evento:',
+        `• Tipo de evento: ${tipoFinal}`,
+        `• Cantidad de personas: ${personas}`,
+        `• Fecha: ${fecha}`,
+        `• Hora: ${hora}`,
+        `• Proyector multimedia: ${proyector}`,
+        'Quedo atento(a) para coordinar los demás detalles.'
+      ].join('\n');
+
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(textoEvento)}`, '_blank', 'noopener');
+    });
+  }
+
   // Toggle desplegable del formulario de reserva
   const toggleReservaBtn = document.getElementById('btn-toggle-reserva');
   const formWrapper = document.getElementById('form-wrapper');
