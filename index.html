@@ -306,36 +306,44 @@
 
     <!-- ===== Contacto / Reserva ===== -->
     <section class="section section--cream" id="contacto">
-      <div class="container contact">
-        <div class="reveal">
-          <p class="eyebrow">Reservaciones</p>
-          <h2>Reserva en un minuto</h2>
-          <p>Llena el formulario y te contactamos por WhatsApp para confirmar tu reserva.</p>
-          <p class="phone"><a href="tel:+50499377949" id="link-tel">📞 9937-7949</a></p>
-          <p><a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb">Síguenos en
-              Facebook →</a></p>
+      <div class="container contact contact--modern">
+        <div class="contact__info">
+          <p class="eyebrow">Atención personalizada</p>
+          <h2>Reserva directa y sin complicaciones</h2>
+          <p class="contact__desc">Garantiza tu habitación en Santa Bárbara con atención inmediata y las mejores tarifas disponibles, comunicándote directamente con recepción.</p>
+          <div class="contact__cta-box">
+            <p class="phone"><a href="tel:+50499377949" id="link-tel">📞 9937-7949</a></p>
+            <p><a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb">Síguenos en Facebook →</a></p>
+          </div>
+          <button type="button" class="btn btn--toggle-form" id="btn-toggle-reserva" aria-expanded="false" aria-controls="form-wrapper">
+            <span class="btn-toggle-text">Llenar solicitud de reserva</span>
+            <span class="btn-toggle-icon">▼</span>
+          </button>
         </div>
-        <form class="form glass reveal" id="form-reserva" novalidate>
-          <label>Nombre<input type="text" id="f-nombre" required autocomplete="name"></label>
-          <div class="form__row">
-            <label>Llegada<input type="date" id="f-llegada" required></label>
-            <label>Salida<input type="date" id="f-salida" required></label>
-          </div>
-          <div class="form__row">
-            <label>Habitación
-              <select id="f-habitacion">
-                <option>Sencilla</option>
-                <option>Doble</option>
-                <option>Triple</option>
-                <option>Suite</option>
-              </select>
-            </label>
-            <label>Personas<input type="number" id="f-personas" min="1" max="10" value="1"></label>
-          </div>
-          <label>Comentarios<textarea id="f-comentarios" rows="3"></textarea></label>
-          <button type="submit" class="btn btn--block" id="f-enviar">Enviar por WhatsApp</button>
-          <p class="form__msg" id="f-msg" role="status"></p>
-        </form>
+        <div class="contact__form-wrapper" id="form-wrapper">
+          <form class="form glass" id="form-reserva" novalidate>
+            <label>Nombre completo<input type="text" id="f-nombre" required autocomplete="name" placeholder="Ej. Juan Pérez"></label>
+            <div class="form__row">
+              <label>Fecha de llegada<input type="date" id="f-llegada" required></label>
+              <label>Fecha de salida<input type="date" id="f-salida" required></label>
+            </div>
+            <div class="form__row">
+              <label>Tipo de habitación
+                <select id="f-habitacion">
+                  <option>Sencilla</option>
+                  <option>Doble</option>
+                  <option>Triple</option>
+                  <option>Suite</option>
+                  <option>Tarifa Corporativa</option>
+                </select>
+              </label>
+              <label>Número de personas<input type="number" id="f-personas" min="1" max="10" value="1"></label>
+            </div>
+            <label>Peticiones especiales o comentarios<textarea id="f-comentarios" rows="3" placeholder="Ej. Llegada tarde, cuna, etc."></textarea></label>
+            <button type="submit" class="btn btn--block" id="f-enviar">Enviar por WhatsApp</button>
+            <p class="form__msg" id="f-msg" role="status"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>

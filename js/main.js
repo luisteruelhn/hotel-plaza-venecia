@@ -96,6 +96,20 @@
     });
   }
 
+  // Toggle desplegable del formulario de reserva
+  const toggleReservaBtn = document.getElementById('btn-toggle-reserva');
+  const formWrapper = document.getElementById('form-wrapper');
+  if (toggleReservaBtn && formWrapper) {
+    toggleReservaBtn.addEventListener('click', () => {
+      const isOpen = formWrapper.classList.toggle('is-open');
+      toggleReservaBtn.setAttribute('aria-expanded', String(isOpen));
+      const textSpan = toggleReservaBtn.querySelector('.btn-toggle-text');
+      if (textSpan) {
+        textSpan.textContent = isOpen ? 'Ocultar formulario' : 'Llenar solicitud de reserva';
+      }
+    });
+  }
+
   // Formulario de reserva -> WhatsApp (sin servidor)
   const form = document.getElementById('form-reserva');
   const msg = document.getElementById('f-msg');

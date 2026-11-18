@@ -162,9 +162,28 @@ em { font-style: italic; color: var(--dorado); }
 .map iframe { width: 100%; height: 100%; border: 0; }
 
 /* ---------- Contacto ---------- */
-.contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: center; }
+.contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: start; }
+.contact--modern { padding: 1rem 0; }
 .phone a { font-family: var(--font-title); font-size: 2rem; color: var(--terracota); text-decoration: none; }
 .contact p { margin-bottom: 1rem; }
+.contact__desc { font-size: 1.05rem; line-height: 1.5; color: var(--carbon); }
+.contact__cta-box { margin: 1.5rem 0; }
+.btn--toggle-form { display: inline-flex; align-items: center; gap: .6rem; background: var(--verde-dark); border: 1.5px solid var(--dorado); color: var(--dorado); padding: .75rem 1.4rem; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; transition: background .3s, transform .2s; }
+.btn--toggle-form:hover { background: var(--verde); transform: translateY(-2px); }
+.btn-toggle-icon { font-size: .8rem; transition: transform .3s ease; }
+.btn--toggle-form[aria-expanded="true"] .btn-toggle-icon { transform: rotate(180deg); }
+
+.contact__form-wrapper { overflow: hidden; transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1), opacity .4s ease; }
+@media (max-width: 900px) {
+  .contact { grid-template-columns: 1fr; }
+  .contact__form-wrapper:not(.is-open) { max-height: 0; opacity: 0; pointer-events: none; }
+  .contact__form-wrapper.is-open { max-height: 1000px; opacity: 1; margin-top: 1.5rem; }
+}
+@media (min-width: 901px) {
+  .btn--toggle-form { display: none; }
+  .contact__form-wrapper { max-height: none !important; opacity: 1 !important; }
+}
+
 .form { padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-lg); display: grid; gap: 1rem; background: var(--blanco); }
 .form label { display: grid; gap: .35rem; font-size: .85rem; font-weight: 600; color: var(--verde); }
 .form input, .form select, .form textarea { font: 400 1rem var(--font-body); padding: .8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--arena); background: var(--crema); color: var(--carbon); transition: border-color .3s, box-shadow .3s; }
