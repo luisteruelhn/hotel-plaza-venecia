@@ -135,6 +135,18 @@
     if (hiViewport) {
       hiViewport.addEventListener('mouseenter', stopHiAuto);
       hiViewport.addEventListener('mouseleave', startHiAuto);
+      let touchStartX = 0;
+      hiViewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopHiAuto();
+      }, { passive: true });
+      hiViewport.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) {
+          updateHiGallery(diff > 0 ? hiIndex + 1 : hiIndex - 1);
+        }
+        startHiAuto();
+      }, { passive: true });
     }
     window.addEventListener('resize', () => updateHiGallery(hiIndex), { passive: true });
     requestAnimationFrame(() => updateHiGallery(0));
