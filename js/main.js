@@ -275,11 +275,47 @@
     });
   }
 
-  // Formulario de reserva -> WhatsApp (sin servidor)
+  // Formulario de reserva -> WhatsApp (con soporte para múltiples habitaciones)
   const form = document.getElementById('form-reserva');
   const msg = document.getElementById('f-msg');
   const llegada = document.getElementById('f-llegada');
   const salida = document.getElementById('f-salida');
+  const btnAddRoom = document.getElementById('btn-add-room');
+  const roomsListEl = document.getElementById('f-rooms-list');
+  const selHab = document.getElementById('f-habitacion');
+  const inpCantHab = document.getElementById('f-cant-hab');
+  const selectedRooms = new Map();
+
+  const renderRoomsChips = () => {
+    if (!roomsListEl) return;
+    roomsListEl.innerHTML = '';
+    selectedRooms.forEach((qty, type) => {
+      const chip = document.createElement('span');
+      chip.className = 'room-chip';
+      chip.innerHTML = `<strong>${qty}×</strong> ${type} <button type="button" data-remove="${type}" aria-label="Quitar ${type}">&times;</button>`;
+      roomsListEl.appendChild(chip);
+    });
+  };
+
+  if (btnAddRoom && selHab && inpCantHab) {
+    btnAddRoom.addEventListener('click', () => {
+      const type = selHab.value;
+      const qty = Math.max(1, parseInt(inpCantHab.value, 10) || 1);
+      selectedRooms.set(type, (selectedRooms.get(type) || 0) + qty);
+      inpCantHab.value = '1';
+      renderRoomsChips();
+    });
+  }
+
+  if (roomsListEl) {
+    roomsListEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-remove]');
+      if (!btn) return;
+      selectedRooms.delete(btn.getAttribute('data-remove'));
+      renderRoomsChips();
+    });
+  }
+
   const hoy = new Date().toISOString().split('T')[0];
   llegada.min = hoy; salida.min = hoy;
   llegada.addEventListener('change', () => { salida.min = llegada.value || hoy; });
@@ -291,13 +327,24 @@
     if (!nombre || !llegada.value || !salida.value) { msg.textContent = 'Por favor completa nombre y fechas.'; return; }
     if (salida.value <= llegada.value) { msg.textContent = 'La fecha de salida debe ser posterior a la llegada.'; return; }
     msg.textContent = '';
+
+    let detalleHabitaciones = '';
+    if (selectedRooms.size > 0) {
+      const items = [];
+      selectedRooms.forEach((qty, type) => items.push(`${qty} ${type}`));
+      detalleHabitaciones = items.join(', ');
+    } else {
+      const qtyActual = Math.max(1, parseInt(inpCantHab ? inpCantHab.value : '1', 10) || 1);
+      detalleHabitaciones = `${qtyActual} ${val('f-habitacion')}`;
+    }
+
     const texto = [
-      'Hola Hotel Venecia, quisiera reservar:',
+      'Hola Hotel Plaza Venecia, quisiera reservar:',
       `• Nombre: ${nombre}`,
       `• Llegada: ${llegada.value}`,
       `• Salida: ${salida.value}`,
-      `• Habitación: ${val('f-habitacion')}`,
-      `• Personas: ${val('f-personas')}`,
+      `• Habitaciones: ${detalleHabitaciones}`,
+      `• Total de personas: ${val('f-personas')}`,
       val('f-comentarios') ? `• Comentarios: ${val('f-comentarios')}` : ''
     ].filter(Boolean).join('\n');
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');

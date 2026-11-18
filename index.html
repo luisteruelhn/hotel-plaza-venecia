@@ -102,6 +102,16 @@
       .evento-form__note { font-size: .8rem; color: var(--gris); margin: 0; font-style: italic; line-height: 1.4; }
       .evento-form__otro[hidden] { display: none; }
       @media (max-width: 520px) { .evento-form__row { grid-template-columns: 1fr; } }
+      /* Selector múltiple de habitaciones en Reserva */
+      .room-adder { display: grid; grid-template-columns: 1.4fr .7fr auto; gap: .6rem; align-items: end; }
+      .btn--add-room { height: 46px; padding: 0 1rem; border-radius: var(--radius-sm); background: var(--verde-dark); color: var(--dorado); border: 1.5px solid var(--dorado); font: 600 .88rem var(--font-body); cursor: pointer; white-space: nowrap; transition: background .25s, color .25s; }
+      .btn--add-room:hover { background: var(--verde); color: var(--blanco); }
+      .rooms-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .2rem; }
+      .rooms-chips:empty { display: none; }
+      .room-chip { display: inline-flex; align-items: center; gap: .45rem; background: var(--verde-dark); color: var(--blanco); border: 1px solid var(--dorado); padding: .32rem .7rem; border-radius: 999px; font-size: .82rem; font-weight: 600; }
+      .room-chip strong { color: var(--dorado); }
+      .room-chip button { background: none; border: 0; color: var(--dorado); font-size: 1rem; line-height: 1; cursor: pointer; padding: 0 .1rem; }
+      @media (max-width: 520px) { .room-adder { grid-template-columns: 1fr 80px auto; } }
   </style>
   <script type="application/ld+json">
   {
@@ -576,18 +586,23 @@
               <label>Fecha de llegada<input type="date" id="f-llegada" required></label>
               <label>Fecha de salida<input type="date" id="f-salida" required></label>
             </div>
-            <div class="form__row">
+            <div class="room-adder">
               <label>Tipo de habitación
                 <select id="f-habitacion">
-                  <option>Sencilla</option>
-                  <option>Doble</option>
-                  <option>Triple</option>
-                  <option>Suite</option>
-                  <option>Tarifa Corporativa</option>
+                  <option value="Sencilla">Sencilla</option>
+                  <option value="Doble">Doble</option>
+                  <option value="Triple">Triple</option>
+                  <option value="Suite">Suite</option>
+                  <option value="Tarifa Corporativa">Tarifa Corporativa</option>
                 </select>
               </label>
-              <label>Número de personas<input type="number" id="f-personas" min="1" max="10" value="1"></label>
+              <label>Cantidad
+                <input type="number" id="f-cant-hab" min="1" max="30" value="1">
+              </label>
+              <button type="button" class="btn--add-room" id="btn-add-room" aria-label="Agregar habitación a la lista">+ Agregar</button>
             </div>
+            <div class="rooms-chips" id="f-rooms-list" aria-live="polite"></div>
+            <label>Total de personas<input type="number" id="f-personas" min="1" max="100" value="1"></label>
             <label>Peticiones especiales o comentarios<textarea id="f-comentarios" rows="3" placeholder="Ej. Llegada tarde, cuna, etc."></textarea></label>
             <button type="submit" class="btn btn--block btn--whatsapp" id="f-enviar">
               <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
@@ -658,8 +673,8 @@
     </form>
   </section>
 
-  <script src="js/main.js?v=20261118c" defer></script>
-  <script src="js/chatbot.js?v=20261118c" defer></script>
+  <script src="js/main.js?v=20261118d" defer></script>
+  <script src="js/chatbot.js?v=20261118d" defer></script>
 </body>
 
 </html>
