@@ -3,14 +3,15 @@
    Moderno, cálido y "como en casa"
    ========================================================= */
 :root {
-  --terracota: #B5562E;
-  --terracota-dark: #8F3F1F;
-  --crema: #F7F1E8;
-  --arena: #EADFCF;
-  --verde: #2F4A3A;
-  --verde-dark: #1F3327;
+  /* Paleta basada en la fachada (azul/rojo), el logo (dorado) y la madera de recepción */
+  --terracota: #B3202E;      /* rojo veneciano (acento / CTA) */
+  --terracota-dark: #8A1622;
+  --crema: #F8F4EC;
+  --arena: #E7DCC8;
+  --verde: #1E3A6B;          /* azul marino de la marca */
+  --verde-dark: #13264A;
   --dorado: #C9A15B;
-  --carbon: #2A2622;
+  --carbon: #2B2420;         /* madera oscura */
   --gris: #6B635B;
   --blanco: #FFFFFF;
 
@@ -68,7 +69,10 @@ em { font-style: italic; color: var(--dorado); }
 .nav { position: fixed; inset: 0 0 auto; z-index: 50; padding: 1.1rem 0; transition: background .4s, padding .4s, box-shadow .4s; color: var(--blanco); }
 .nav.is-scrolled { background: rgba(247, 241, 232, .85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); padding: .65rem 0; box-shadow: 0 4px 20px rgba(0, 0, 0, .06); color: var(--carbon); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; }
-.nav__logo { font-family: var(--font-title); font-size: 1.45rem; font-weight: 700; text-decoration: none; }
+.nav__logo { font-family: var(--font-title); font-size: 1.45rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; }
+.nav__logo img { height: 52px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); transition: height .4s; }
+.nav.is-scrolled .nav__logo img { height: 44px; filter: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .nav__logo span { color: var(--dorado); }
 .nav__links { display: flex; align-items: center; gap: 2rem; }
 .nav__links a:not(.btn) { text-decoration: none; font-weight: 500; font-size: .95rem; position: relative; }
@@ -83,8 +87,8 @@ em { font-style: italic; color: var(--dorado); }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; color: var(--blanco); overflow: hidden; }
-.hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.08); animation: heroZoom 18s ease-out forwards; }
-.hero__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(31, 51, 39, .88) 0%, rgba(31, 51, 39, .55) 45%, rgba(0, 0, 0, .1) 100%); }
+.hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center 35%; transform: scale(1.08); animation: heroZoom 18s ease-out forwards; }
+.hero__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(19, 38, 74, .9) 0%, rgba(19, 38, 74, .6) 45%, rgba(0, 0, 0, .1) 100%); }
 @keyframes heroZoom { to { transform: scale(1); } }
 .hero__content { position: relative; z-index: 1; padding-top: 5rem; max-width: 1180px; }
 .hero .eyebrow { color: var(--dorado); }
@@ -117,7 +121,11 @@ em { font-style: italic; color: var(--dorado); }
 /* ---------- Split (restaurante / eventos / ubicación) ---------- */
 .split__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .split--reverse .split__media { order: 2; }
+.split__media { position: relative; }
 .split__media img { border-radius: var(--radius); box-shadow: var(--shadow-lg); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.split__media img.split__tall { aspect-ratio: 3/4; width: 75%; }
+.split__media img.split__inset { position: absolute; width: 48%; right: 0; bottom: -8%; z-index: 1; border: 6px solid var(--blanco); aspect-ratio: 1/1; }
+.footer__logo { width: 200px; margin-bottom: .8rem; }
 .split__text p { margin-bottom: 1.2rem; }
 .checks { margin: 0 0 1.8rem; display: grid; gap: .6rem; }
 .checks li { padding-left: 1.8rem; position: relative; }
