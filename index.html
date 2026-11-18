@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Venecia | Hospedaje en el centro de Santa Bárbara, Honduras</title>
-  <meta name="description" content="Hotel Plaza Venecia: habitaciones cómodas y seguras a cuadra y media del Parque Central de Santa Bárbara. Restaurante, Bar Venetto y salones para eventos. Reserva por WhatsApp 9937-7949.">
+  <meta name="description"
+    content="Hotel Plaza Venecia: habitaciones cómodas y seguras a cuadra y media del Parque Central de Santa Bárbara. Restaurante, Bar Venetto y salones para eventos. Reserva por WhatsApp 9937-7949.">
   <link rel="canonical" href="https://www.hotelveneciahn.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hotel Venecia · Tu casa en el corazón de Santa Bárbara">
@@ -14,13 +16,15 @@
   <meta name="theme-color" content="#2F4A3A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/fachada.jpg">
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Hotel",
+    "@type": "Hotel",l
     "name": "Hotel Plaza Venecia",
     "url": "https://www.hotelveneciahn.com/",
     "telephone": "+504 9937-7949",
@@ -41,212 +45,313 @@
   }
   </script>
 </head>
+
 <body>
 
-<!-- ===== Navegación ===== -->
-<header class="nav" id="nav">
-  <div class="container nav__inner">
-    <a href="#inicio" class="nav__logo" id="nav-logo"><img src="assets/img/logo-dorado.png" alt="Hotel Venecia" width="115" height="55"><span class="sr-only">Hotel Venecia</span></a>
-    <nav aria-label="Principal">
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#habitaciones">Habitaciones</a></li>
-        <li><a href="#restaurante">Restaurante</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#contacto" class="btn btn--sm">Reservar</a></li>
-      </ul>
-    </nav>
-    <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
-  </div>
-</header>
-
-<main>
-  <!-- ===== Portada ===== -->
-  <section class="hero" id="inicio">
-    <div class="hero__bg" style="background-image:url('assets/img/fachada.jpg')"></div>
-    <div class="container hero__content">
-      <p class="eyebrow reveal">Santa Bárbara · Honduras</p>
-      <h1 class="reveal">Tu casa en el corazón<br>de <em>Santa Bárbara</em></h1>
-      <p class="hero__lead reveal">Habitaciones cómodas, ambiente familiar y la tranquilidad de estar seguro, a solo cuadra y media del Parque Central.</p>
-      <div class="hero__cta reveal">
-        <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20reservar%20en%20Hotel%20Venecia" class="btn" id="hero-reservar" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-        <a href="#habitaciones" class="btn btn--ghost" id="hero-habitaciones">Ver habitaciones</a>
-      </div>
+  <!-- ===== Navegación ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo" id="nav-logo"><span>Hotel Plaza Venecia</span></a>
+      <nav aria-label="Principal">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#restaurante">Restaurante</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#contacto" class="btn btn--sm">Reservar</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú"
+        aria-expanded="false"><span></span><span></span></button>
     </div>
-    <div class="hero__badge glass reveal">
-      <strong>1½</strong><span>cuadras del<br>Parque Central</span>
-    </div>
-  </section>
+  </header>
 
-  <!-- ===== Por qué elegirnos ===== -->
-  <section class="section features">
-    <div class="container grid grid--4">
-      <article class="feature reveal">
-        <div class="feature__icon">📍</div>
-        <h3>Céntrico</h3>
-        <p>Camina al parque, iglesia, bancos y comercios en minutos.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature__icon">🛡️</div>
-        <h3>Seguro</h3>
-        <p>Un lugar tranquilo y vigilado para que descanses sin preocupaciones.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature__icon">🏡</div>
-        <h3>Como en casa</h3>
-        <p>Trato cercano y familiar desde que llegas hasta que te vas.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature__icon">🍝</div>
-        <h3>Restaurante y bar</h3>
-        <p>Buena comida y el ambiente del Bar Venetto sin salir del hotel.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ===== Habitaciones ===== -->
-  <section class="section section--cream" id="habitaciones">
-    <div class="container">
-      <header class="section__head reveal">
-        <p class="eyebrow">Hospedaje</p>
-        <h2>Nuestras habitaciones</h2>
-        <p>Espacios limpios, cómodos y pensados para descansar de verdad.</p>
-      </header>
-      <div class="grid grid--4">
-        <article class="room reveal" id="room-sencilla">
-          <div class="room__img" style="background-image:url('assets/img/habitacion.png')"></div>
-          <div class="room__body">
-            <h3>Sencilla</h3>
-            <p>Ideal para viajeros de trabajo o visitas cortas.</p>
-            <ul class="tags"><li>1 persona</li><li>Wi-Fi</li><li>TV</li></ul>
-            <a class="link" target="_blank" rel="noopener" href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Sencilla">Consultar disponibilidad →</a>
-          </div>
-        </article>
-        <article class="room reveal" id="room-doble">
-          <div class="room__img" style="background-image:url('assets/img/habitacion-doble.jpg');background-position:center"></div>
-          <div class="room__body">
-            <h3>Doble</h3>
-            <p>Perfecta para parejas o dos compañeros de viaje.</p>
-            <ul class="tags"><li>2 personas</li><li>Wi-Fi</li><li>TV</li></ul>
-            <a class="link" target="_blank" rel="noopener" href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Doble">Consultar disponibilidad →</a>
-          </div>
-        </article>
-        <article class="room reveal" id="room-triple">
-          <div class="room__img" style="background-image:url('assets/img/habitacion-triple.jpg');background-position:center"></div>
-          <div class="room__body">
-            <h3>Triple</h3>
-            <p>Espacio cómodo para familias o grupos pequeños.</p>
-            <ul class="tags"><li>3 personas</li><li>Wi-Fi</li><li>TV</li></ul>
-            <a class="link" target="_blank" rel="noopener" href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Triple">Consultar disponibilidad →</a>
-          </div>
-        </article>
-        <article class="room room--featured reveal" id="room-suite">
-          <div class="room__img" style="background-image:url('assets/img/habitacion.png');background-position:right center"><span class="pill">Recomendada</span></div>
-          <div class="room__body">
-            <h3>Suite</h3>
-            <p>Nuestra opción más amplia para una estadía especial.</p>
-            <ul class="tags"><li>Más espacio</li><li>Wi-Fi</li><li>TV</li></ul>
-            <a class="link" target="_blank" rel="noopener" href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20la%20Suite">Consultar disponibilidad →</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Restaurante y Bar ===== -->
-  <section class="section split" id="restaurante">
-    <div class="container split__inner">
-      <div class="split__media reveal"><img src="assets/img/restaurante.jpg" class="split__inset" alt="Restaurante del Hotel Venecia" loading="lazy" width="294" height="312"><img src="assets/img/bar-venetto.jpg" class="split__tall" alt="Bar Venetto del Hotel Venecia" loading="lazy" width="294" height="428"></div>
-      <div class="split__text reveal">
-        <p class="eyebrow">Restaurante · Bar Venetto</p>
-        <h2>Sabores que te hacen sentir en casa</h2>
-        <p>Desayunos para empezar bien el día, almuerzos y cenas preparados con cariño. Y por la noche, relájate en el <strong>Bar Venetto</strong> con una bebida y buena compañía.</p>
-        <ul class="checks"><li>Desayunos para huéspedes y visitantes</li><li>Platos nacionales e internacionales</li><li>Bar Venetto: bebidas y ambiente relajado</li></ul>
-        <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20restaurante" class="btn" target="_blank" rel="noopener" id="btn-restaurante">Pedir información</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Eventos ===== -->
-  <section class="section split split--reverse section--green" id="eventos">
-    <div class="container split__inner">
-      <div class="split__media reveal"><img src="assets/img/salon.png" alt="Salón para eventos del Hotel Venecia" loading="lazy" width="800" height="600"></div>
-      <div class="split__text reveal">
-        <p class="eyebrow">Salones para eventos</p>
-        <h2>Celebra y reúnete en el centro</h2>
-        <p>Bodas, cumpleaños, graduaciones, reuniones de trabajo o capacitaciones. Te ayudamos a organizar tu evento con servicio de alimentos incluido.</p>
-        <ul class="checks"><li>Eventos sociales y familiares</li><li>Reuniones y capacitaciones empresariales</li><li>Servicio de comida y bebidas</li></ul>
-        <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20cotizar%20un%20evento" class="btn btn--light" target="_blank" rel="noopener" id="btn-eventos">Cotizar mi evento</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Ubicación ===== -->
-  <section class="section" id="ubicacion">
-    <div class="container split__inner">
-      <div class="reveal">
-        <p class="eyebrow">Ubicación</p>
-        <h2>A pasos de todo</h2>
-        <p class="address">📍 Colonia Alfonso XIII, cuadra y media al sur del Parque Central de Santa Bárbara, Honduras.</p>
-        <ul class="checks"><li>Parque Central – 2 min caminando</li><li>Catedral, bancos y comercios cercanos</li><li>Fácil acceso para vehículos</li></ul>
-        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras" class="btn" target="_blank" rel="noopener" id="btn-mapa">Cómo llegar</a>
-      </div>
-      <div class="map reveal">
-        <iframe title="Mapa Hotel Venecia" src="https://www.google.com/maps?q=Parque+Central+Santa+B%C3%A1rbara+Honduras&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contacto / Reserva ===== -->
-  <section class="section section--cream" id="contacto">
-    <div class="container contact">
-      <div class="reveal">
-        <p class="eyebrow">Reservaciones</p>
-        <h2>Reserva en un minuto</h2>
-        <p>Llena el formulario y te contactamos por WhatsApp para confirmar tu reserva.</p>
-        <p class="phone"><a href="tel:+50499377949" id="link-tel">📞 9937-7949</a></p>
-        <p><a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb">Síguenos en Facebook →</a></p>
-      </div>
-      <form class="form glass reveal" id="form-reserva" novalidate>
-        <label>Nombre<input type="text" id="f-nombre" required autocomplete="name"></label>
-        <div class="form__row">
-          <label>Llegada<input type="date" id="f-llegada" required></label>
-          <label>Salida<input type="date" id="f-salida" required></label>
+  <main>
+    <!-- ===== Portada ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" style="background-image:url('assets/img/fachada.jpg')"></div>
+      <div class="container hero__content">
+        <img src="assets/img/logo-dorado.png" alt="Hotel Plaza Venecia" class="hero__logo" width="260" height="125">
+        <p class="eyebrow">Santa Bárbara · Honduras</p>
+        <h1 class="reveal">Tu casa en el corazón<br>de <em>Santa Bárbara</em></h1>
+        <p class="hero__lead reveal">Habitaciones cómodas, ambiente familiar y la tranquilidad de estar seguro, a solo
+          cuadra y media del Parque Central.</p>
+        <div class="hero__cta reveal">
+          <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20reservar%20en%20Hotel%20Venecia" class="btn"
+            id="hero-reservar" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+          <a href="#habitaciones" class="btn btn--ghost" id="hero-habitaciones">Ver habitaciones</a>
         </div>
-        <div class="form__row">
-          <label>Habitación
-            <select id="f-habitacion">
-              <option>Sencilla</option><option>Doble</option><option>Triple</option><option>Suite</option>
-            </select>
-          </label>
-          <label>Personas<input type="number" id="f-personas" min="1" max="10" value="1"></label>
+      </div>
+      <div class="hero__badge glass reveal">
+        <strong>1½</strong><span>cuadras del<br>Parque Central</span>
+      </div>
+    </section>
+
+    <!-- ===== Por qué elegirnos ===== -->
+    <section class="section features">
+      <div class="container grid grid--4">
+        <article class="feature reveal">
+          <div class="feature__icon">📍</div>
+          <h3>Céntrico</h3>
+          <p>Camina al parque, iglesia, bancos y comercios en minutos.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">🛡️</div>
+          <h3>Seguro</h3>
+          <p>Un lugar tranquilo y vigilado para que descanses sin preocupaciones.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">🏡</div>
+          <h3>Como en casa</h3>
+          <p>Trato cercano y familiar desde que llegas hasta que te vas.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">🍝</div>
+          <h3>Restaurante y bar</h3>
+          <p>Buena comida y el ambiente del Bar Venetto sin salir del hotel.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Habitaciones ===== -->
+    <section class="section section--cream" id="habitaciones">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Hospedaje</p>
+          <h2>Nuestras habitaciones</h2>
+          <p>El descanso que buscas después de un día de viaje o trabajo, con todo lo necesario para sentirte como en casa. Contamos con <strong>tarifas especiales y corporativas</strong>.</p>
+        </header>
+        <div class="grid grid--4">
+          <article class="room reveal" id="room-sencilla">
+            <div class="room__img" style="background-image:url('assets/img/habitacion.png')"></div>
+            <div class="room__body">
+              <h3>Sencilla</h3>
+              <p>Ideal para viajeros de trabajo o visitas cortas.</p>
+              <ul class="tags">
+                <li>1 persona</li>
+                <li>Wi-Fi</li>
+                <li>TV</li>
+              </ul>
+              <a class="link" target="_blank" rel="noopener"
+                href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Sencilla">Consultar
+                disponibilidad →</a>
+            </div>
+          </article>
+          <article class="room reveal" id="room-doble">
+            <div class="room__img"
+              style="background-image:url('assets/img/habitacion-doble.jpg');background-position:center"></div>
+            <div class="room__body">
+              <h3>Doble</h3>
+              <p>Perfecta para parejas o dos compañeros de viaje.</p>
+              <ul class="tags">
+                <li>2 personas</li>
+                <li>Wi-Fi</li>
+                <li>TV</li>
+              </ul>
+              <a class="link" target="_blank" rel="noopener"
+                href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Doble">Consultar
+                disponibilidad →</a>
+            </div>
+          </article>
+          <article class="room reveal" id="room-triple">
+            <div class="room__img"
+              style="background-image:url('assets/img/habitacion-triple.jpg');background-position:center"></div>
+            <div class="room__body">
+              <h3>Triple</h3>
+              <p>Espacio cómodo para familias o grupos pequeños.</p>
+              <ul class="tags">
+                <li>3 personas</li>
+                <li>Wi-Fi</li>
+                <li>TV</li>
+              </ul>
+              <a class="link" target="_blank" rel="noopener"
+                href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20habitaci%C3%B3n%20Triple">Consultar
+                disponibilidad →</a>
+            </div>
+          </article>
+          <article class="room room--featured reveal" id="room-suite">
+            <div class="room__img"
+              style="background-image:url('assets/img/habitacion.png');background-position:right center"><span
+                class="pill">Recomendada</span></div>
+            <div class="room__body">
+              <h3>Suite</h3>
+              <p>Nuestra opción más amplia para una estadía especial.</p>
+              <ul class="tags">
+                <li>Más espacio</li>
+                <li>Wi-Fi</li>
+                <li>TV</li>
+              </ul>
+              <a class="link" target="_blank" rel="noopener"
+                href="https://wa.me/50499377949?text=Hola%2C%20consulto%20disponibilidad%20de%20la%20Suite">Consultar
+                disponibilidad →</a>
+            </div>
+          </article>
         </div>
-        <label>Comentarios<textarea id="f-comentarios" rows="3"></textarea></label>
-        <button type="submit" class="btn btn--block" id="f-enviar">Enviar por WhatsApp</button>
-        <p class="form__msg" id="f-msg" role="status"></p>
-      </form>
+      </div>
+    </section>
+
+    <!-- ===== Restaurante y Bar ===== -->
+    <section class="section split" id="restaurante">
+      <div class="container split__inner">
+        <div class="split__media reveal"><img src="assets/img/restaurante.jpg" class="split__inset"
+            alt="Restaurante del Hotel Venecia" loading="lazy" width="294" height="312"><img
+            src="assets/img/bar-venetto.jpg" class="split__tall" alt="Bar Venetto del Hotel Venecia" loading="lazy"
+            width="294" height="428"></div>
+        <div class="split__text reveal">
+          <p class="eyebrow">Restaurante · Bar Venetto</p>
+          <h2>Sabores que te hacen sentir en casa</h2>
+          <p>Desayunos para empezar bien el día, almuerzos y cenas preparados con cariño. Y por la noche, relájate en el
+            <strong>Bar Venetto</strong> con una bebida y buena compañía.</p>
+          <ul class="checks">
+            <li>Desayunos para huéspedes y visitantes</li>
+            <li>Platos nacionales e internacionales</li>
+            <li>Bar Venetto: bebidas y ambiente relajado</li>
+          </ul>
+          <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20restaurante" class="btn"
+            target="_blank" rel="noopener" id="btn-restaurante">Pedir información</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Eventos ===== -->
+    <section class="section split split--reverse section--green" id="eventos">
+      <div class="container split__inner">
+        <div class="split__media reveal"><img src="assets/img/salon.png" alt="Salón para eventos del Hotel Venecia"
+            loading="lazy" width="800" height="600"></div>
+        <div class="split__text reveal">
+          <p class="eyebrow">Salones para eventos</p>
+          <h2>Celebra y reúnete en el centro</h2>
+          <p>Bodas, cumpleaños, graduaciones, reuniones de trabajo o capacitaciones. Te ayudamos a organizar tu evento
+            con servicio de alimentos incluido.</p>
+          <ul class="checks">
+            <li>Eventos sociales y familiares</li>
+            <li>Reuniones y capacitaciones empresariales</li>
+            <li>Servicio de comida y bebidas</li>
+          </ul>
+          <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20cotizar%20un%20evento" class="btn btn--light"
+            target="_blank" rel="noopener" id="btn-eventos">Cotizar mi evento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ubicación ===== -->
+    <section class="section" id="ubicacion">
+      <div class="container split__inner">
+        <div class="reveal">
+          <p class="eyebrow">Ubicación</p>
+          <h2>A pasos de todo</h2>
+          <p class="address">📍 Colonia Alfonso XIII, cuadra y media al sur del Parque Central de Santa Bárbara,
+            Honduras.</p>
+          <ul class="checks">
+            <li>Parque Central – 2 min caminando</li>
+            <li>Catedral, bancos y comercios cercanos</li>
+            <li>Fácil acceso para vehículos</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras"
+            class="btn" target="_blank" rel="noopener" id="btn-mapa">Cómo llegar</a>
+        </div>
+        <div class="map reveal">
+          <iframe title="Mapa Hotel Venecia"
+            src="https://www.google.com/maps?q=Parque+Central+Santa+B%C3%A1rbara+Honduras&z=16&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contacto / Reserva ===== -->
+    <section class="section section--cream" id="contacto">
+      <div class="container contact">
+        <div class="reveal">
+          <p class="eyebrow">Reservaciones</p>
+          <h2>Reserva en un minuto</h2>
+          <p>Llena el formulario y te contactamos por WhatsApp para confirmar tu reserva.</p>
+          <p class="phone"><a href="tel:+50499377949" id="link-tel">📞 9937-7949</a></p>
+          <p><a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb">Síguenos en
+              Facebook →</a></p>
+        </div>
+        <form class="form glass reveal" id="form-reserva" novalidate>
+          <label>Nombre<input type="text" id="f-nombre" required autocomplete="name"></label>
+          <div class="form__row">
+            <label>Llegada<input type="date" id="f-llegada" required></label>
+            <label>Salida<input type="date" id="f-salida" required></label>
+          </div>
+          <div class="form__row">
+            <label>Habitación
+              <select id="f-habitacion">
+                <option>Sencilla</option>
+                <option>Doble</option>
+                <option>Triple</option>
+                <option>Suite</option>
+              </select>
+            </label>
+            <label>Personas<input type="number" id="f-personas" min="1" max="10" value="1"></label>
+          </div>
+          <label>Comentarios<textarea id="f-comentarios" rows="3"></textarea></label>
+          <button type="submit" class="btn btn--block" id="f-enviar">Enviar por WhatsApp</button>
+          <p class="form__msg" id="f-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <img src="assets/img/logo-dorado.png" alt="Hotel Venecia" class="footer__logo" width="200" height="96"
+          loading="lazy">
+        <p>Hospedaje · Restaurante · Bar Venetto · Eventos</p>
+      </div>
+      <div>
+        <p>Colonia Alfonso XIII, Santa Bárbara, Honduras</p>
+        <p><a href="tel:+50499377949">9937-7949</a> · <a href="https://www.facebook.com/hotelvenecia.SB" target="_blank"
+            rel="noopener">Facebook</a></p>
+      </div>
     </div>
+    <p class="footer__copy">© <span id="year"></span> Hotel Plaza Venecia. Todos los derechos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/50499377949" class="wa-float" id="wa-float" target="_blank" rel="noopener"
+    aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true">
+      <path
+        d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z" />
+    </svg>
+  </a>
+
+  <!-- Chatbot Asistente (Hotel Plaza Venecia & Santa Bárbara) -->
+  <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Abrir asistente del hotel" aria-expanded="false" aria-controls="chat-panel">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  </button>
+
+  <section class="chat-panel" id="chat-panel" aria-label="Asistente virtual del Hotel Plaza Venecia" hidden>
+    <header class="chat-panel__head">
+      <div>
+        <strong>Asistente Plaza Venecia</strong>
+        <small>Hotel &amp; Santa Bárbara</small>
+      </div>
+      <button type="button" class="chat-panel__close" id="chat-close" aria-label="Cerrar asistente">&times;</button>
+    </header>
+    <div class="chat-messages" id="chat-messages" aria-live="polite">
+      <div class="chat-msg chat-msg--bot">
+        ¡Hola! Pregúntame sobre nuestras <strong>habitaciones, restaurante, Bar Venetto, salones, ubicación</strong> o sobre <strong>Santa Bárbara</strong>.
+      </div>
+    </div>
+    <div class="chat-chips" id="chat-chips">
+      <button type="button" data-q="¿Qué habitaciones tienen?">Habitaciones</button>
+      <button type="button" data-q="¿Dónde están ubicados?">Ubicación</button>
+      <button type="button" data-q="¿Qué hay en Santa Bárbara?">Santa Bárbara</button>
+      <button type="button" data-q="¿Cómo puedo reservar?">Reservar</button>
+    </div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off" maxlength="180" required>
+      <button type="submit" aria-label="Enviar pregunta">Enviar</button>
+    </form>
   </section>
-</main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div>
-      <img src="assets/img/logo-dorado.png" alt="Hotel Venecia" class="footer__logo" width="200" height="96" loading="lazy">
-      <p>Hospedaje · Restaurante · Bar Venetto · Eventos</p>
-    </div>
-    <div>
-      <p>Colonia Alfonso XIII, Santa Bárbara, Honduras</p>
-      <p><a href="tel:+50499377949">9937-7949</a> · <a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener">Facebook</a></p>
-    </div>
-  </div>
-  <p class="footer__copy">© <span id="year"></span> Hotel Plaza Venecia. Todos los derechos reservados.</p>
-</footer>
-
-<a href="https://wa.me/50499377949" class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z"/></svg>
-</a>
-
-<script src="js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
 </body>
+
 </html>

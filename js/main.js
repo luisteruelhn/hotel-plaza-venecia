@@ -20,15 +20,9 @@
   toggle.addEventListener('click', () => setMenu(!links.classList.contains('is-open')));
   links.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 
-  // Aparición de elementos al hacer scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 4) * 90}ms`;
-    io.observe(el);
+  // Mostrar elementos sin repetir animaciones de entrada al hacer scroll
+  document.querySelectorAll('.reveal').forEach((el) => {
+    el.classList.add('is-visible');
   });
 
   // Formulario de reserva -> WhatsApp (sin servidor)
