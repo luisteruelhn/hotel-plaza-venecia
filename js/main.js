@@ -3,6 +3,42 @@
   'use strict';
   const WHATSAPP = '50499377949';
 
+  // Saludo dinámico según la hora oficial de Honduras (America/Tegucigalpa)
+  const getSaludoHonduras = () => {
+    try {
+      const horaStr = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Tegucigalpa',
+        hour: 'numeric',
+        hour12: false
+      }).format(new Date());
+      const hora = parseInt(horaStr, 10);
+      if (hora >= 5 && hora < 12) return 'Buenos días';
+      if (hora >= 12 && hora < 18) return 'Buenas tardes';
+      return 'Buenas noches';
+    } catch {
+      return 'Hola';
+    }
+  };
+
+  // Botón flotante de WhatsApp y tarjetas de habitaciones con saludo según horario de Honduras
+  const waFloat = document.getElementById('wa-float');
+  if (waFloat) {
+    waFloat.addEventListener('click', (e) => {
+      e.preventDefault();
+      const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para hacer una consulta.`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  }
+
+  document.querySelectorAll('#habitaciones a.room').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const roomName = card.querySelector('h3')?.textContent?.trim() || 'habitación';
+      const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para consultar disponibilidad de habitación ${roomName}.`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  });
+
   // Navegación: fondo al hacer scroll
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
@@ -191,7 +227,7 @@
       const hab = (bbHabitacion && bbHabitacion.value) ? bbHabitacion.value : 'Por definir';
       const fIn = bbLlegada.value || 'Por coordinar';
       const fOut = bbSalida.value || 'Por coordinar';
-      const msg = `Hola Hotel Plaza Venecia, quisiera consultar disponibilidad y tarifa:\n• Habitación: ${hab}\n• Llegada: ${fIn}\n• Salida: ${fOut}`;
+      const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para consultar disponibilidad y tarifa:\n• Habitación: ${hab}\n• Llegada: ${fIn}\n• Salida: ${fOut}`;
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     });
   }
@@ -265,7 +301,7 @@
       if (corpMsg) corpMsg.textContent = '';
 
       const texto = [
-        'Hola Hotel Plaza Venecia, quisiera consultar tarifas corporativas y convenios:',
+        `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para consultar tarifas corporativas y convenios:`,
         `• Empresa / Organización / Institución: ${empresa}`,
         `• Persona que contacta: ${persona}`
       ].join('\n');
@@ -378,7 +414,7 @@
 
       const tipoFinal = tipo === 'Otro' ? `Otro (${detalleOtro})` : tipo;
       const textoEvento = [
-        'Hola Hotel Plaza Venecia, quisiera cotizar un salón para evento:',
+        `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para cotizar un salón para evento:`,
         `• Nombre / Empresa / Institución: ${nombre}`,
         `• Tipo de evento: ${tipoFinal}`,
         `• Cantidad de personas: ${personas}`,
@@ -519,7 +555,7 @@
     }
 
     const texto = [
-      'Hola Hotel Plaza Venecia, quisiera reservar:',
+      `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para solicitar reserva:`,
       `• Nombre: ${nombre}`,
       `• Llegada: ${llegada.value}`,
       `• Salida: ${salida.value}`,
