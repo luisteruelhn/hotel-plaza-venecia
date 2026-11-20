@@ -53,12 +53,19 @@
   const nextSlide = () => showSlide(currentSlide + 1);
   const prevSlide = () => showSlide(currentSlide - 1);
 
+  const stopAutoSlide = () => {
+    if (slideTimer) {
+      clearTimeout(slideTimer);
+      slideTimer = null;
+    }
+  };
   const startAutoSlide = () => {
     stopAutoSlide();
-    slideTimer = setInterval(nextSlide, 5500);
-  };
-  const stopAutoSlide = () => {
-    if (slideTimer) clearInterval(slideTimer);
+    const delay = currentSlide === 0 ? 60000 : 5000;
+    slideTimer = setTimeout(() => {
+      nextSlide();
+      startAutoSlide();
+    }, delay);
   };
 
   if (btnNext && btnPrev) {
