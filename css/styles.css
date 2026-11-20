@@ -269,14 +269,14 @@ em {
 }
 
 .nav__logo img {
-  height: 58px;
+  height: 70px;
   width: auto;
   clip-path: inset(3px);
   transition: height .3s;
 }
 
 .nav.is-scrolled .nav__logo img {
-  height: 50px;
+  height: 58px;
 }
 
 .sr-only {
@@ -298,7 +298,7 @@ em {
   text-decoration: none;
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   color: var(--carbon);
   position: relative;
   padding-bottom: 4px;
@@ -328,13 +328,13 @@ em {
 }
 
 .btn--nav-cta {
-  height: 44px;
-  padding: 0 1.35rem;
+  height: 46px;
+  padding: 0 1.45rem;
   border-radius: 10px;
   background: var(--verde-dark);
   border: 1.5px solid var(--verde-dark);
   color: var(--blanco);
-  font: 600 .95rem var(--font-body);
+  font: 600 1.02rem var(--font-body);
   box-shadow: 0 4px 12px rgba(56, 20, 6, .18);
 }
 
@@ -1191,10 +1191,10 @@ em {
 
 .footer__brand {
   font-family: var(--font-title);
-  font-size: 1.75rem;
+  font-size: 2.15rem;
   font-weight: 700;
   color: var(--dorado);
-  margin-bottom: .45rem;
+  margin-bottom: .5rem;
   line-height: 1.15;
 }
 
