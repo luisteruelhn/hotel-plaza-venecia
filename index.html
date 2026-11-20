@@ -20,7 +20,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/lobbyz.png?v=20261120z">
-  <link rel="stylesheet" href="css/styles.css?v=20261120aa">
+  <link rel="stylesheet" href="css/styles.css?v=20261120ab">
   <style>
     /* Galería deslizante editorial (Carrusel horizontal con vista previa lateral) */
     .hi-gallery { background: var(--crema); padding: clamp(3rem, 7vw, 5rem) 0; overflow: hidden; }
@@ -753,10 +753,27 @@
           <div class="contact__corporate-card">
             <div class="corporate-badge">Tarifas Corporativas</div>
             <p>¿Viajas por trabajo, proyectos o empresas? Ofrecemos convenios y precios especiales para estancias frecuentes o de equipo.</p>
-            <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20consultar%20tarifas%20corporativas%20y%20convenios%20para%20empresas%20en%20Hotel%20Plaza%20Venecia." class="btn btn--corporate" target="_blank" rel="noopener" id="btn-corporate-wa">
-              <span>Consultar tarifas corporativas</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <button type="button" class="btn btn--corporate" id="btn-corporate-wa" aria-expanded="false" aria-controls="corporate-form-wrap">
+              <span id="btn-corporate-text">Consultar tarifas corporativas</span>
+              <span id="btn-corporate-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="corporate-form-wrap" id="corporate-form-wrap">
+              <form class="corporate-form" id="form-corporate" novalidate>
+                <label>Empresa, organización o institución
+                  <input type="text" id="corp-empresa" required autocomplete="organization" placeholder="Ej. Banco Occidente / ONG / Empresa...">
+                </label>
+                <label>Persona que contacta
+                  <input type="text" id="corp-persona" required autocomplete="name" placeholder="Ej. María López">
+                </label>
+                <p class="form__msg" id="corp-msg" role="status" style="margin:0;"></p>
+                <button type="submit" class="btn btn--block btn--whatsapp">
+                  <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z" />
+                  </svg>
+                  <span>Enviar consulta por WhatsApp</span>
+                </button>
+              </form>
+            </div>
           </div>
 
           <button type="button" class="btn btn--toggle-form" id="btn-toggle-reserva" aria-expanded="false" aria-controls="form-wrapper">
@@ -858,7 +875,7 @@
     </form>
   </section>
 
-  <script src="js/main.js?v=20261120g" defer></script>
+  <script src="js/main.js?v=20261120ab" defer></script>
   <script src="js/chatbot.js?v=20261118e" defer></script>
 </body>
 

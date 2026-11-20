@@ -203,6 +203,48 @@
     });
   }
 
+  // ===== Subformulario de Tarifas Corporativas =====
+  const btnCorporate = document.getElementById('btn-corporate-wa');
+  const corporateWrap = document.getElementById('corporate-form-wrap');
+  const formCorporate = document.getElementById('form-corporate');
+  const corpMsg = document.getElementById('corp-msg');
+
+  if (btnCorporate && corporateWrap) {
+    btnCorporate.addEventListener('click', () => {
+      const isOpen = corporateWrap.classList.toggle('is-open');
+      btnCorporate.setAttribute('aria-expanded', String(isOpen));
+      const icon = document.getElementById('btn-corporate-icon');
+      const txt = document.getElementById('btn-corporate-text');
+      if (icon) icon.textContent = isOpen ? '▲' : '▼';
+      if (txt) txt.textContent = isOpen ? 'Ocultar consulta corporativa' : 'Consultar tarifas corporativas';
+      if (isOpen) {
+        const empresaInput = document.getElementById('corp-empresa');
+        if (empresaInput) setTimeout(() => empresaInput.focus(), 180);
+      }
+    });
+  }
+
+  if (formCorporate) {
+    formCorporate.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const empresa = (document.getElementById('corp-empresa')?.value || '').trim();
+      const persona = (document.getElementById('corp-persona')?.value || '').trim();
+      if (!empresa || !persona) {
+        if (corpMsg) corpMsg.textContent = 'Por favor indica la empresa/institución y la persona que contacta.';
+        return;
+      }
+      if (corpMsg) corpMsg.textContent = '';
+
+      const texto = [
+        'Hola Hotel Plaza Venecia, quisiera consultar tarifas corporativas y convenios:',
+        `• Empresa / Organización / Institución: ${empresa}`,
+        `• Persona que contacta: ${persona}`
+      ].join('\n');
+
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    });
+  }
+
   // Toggle desplegable y envío del mini formulario de Eventos
   const btnEventos = document.getElementById('btn-eventos');
   const eventoWrap = document.getElementById('evento-form-wrap');
