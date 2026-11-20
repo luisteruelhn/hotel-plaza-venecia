@@ -406,13 +406,18 @@ em {
   background-size: cover;
   background-position: right center;
   opacity: 0;
-  transition: opacity .9s ease-in-out, transform 6s ease-out;
-  transform: scale(1.01);
+  transition: opacity .9s ease-in-out;
 }
 
 .hero__slide.is-active {
   opacity: 1;
-  transform: scale(1);
+}
+
+.hero__slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(40, 11, 2, .72) 0%, rgba(40, 11, 2, .32) 32%, transparent 56%);
 }
 
 .hero__content {
