@@ -271,7 +271,7 @@ em {
 .nav__logo img {
   height: 58px;
   width: auto;
-  filter: drop-shadow(0 1px 2px rgba(36, 25, 20, .14));
+  clip-path: inset(3px);
   transition: height .3s;
 }
 
@@ -1187,6 +1187,15 @@ em {
   z-index: 1;
   border: 6px solid var(--blanco);
   aspect-ratio: 1/1;
+}
+
+.footer__brand {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dorado);
+  margin-bottom: .45rem;
+  line-height: 1.15;
 }
 
 .footer__logo {
