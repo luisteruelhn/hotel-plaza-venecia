@@ -3,19 +3,21 @@
    Moderno, cálido y "como en casa"
    ========================================================= */
 :root {
-  /* Paleta basada en la fachada (azul/rojo), el logo (dorado) y la madera de recepción */
-  --terracota: #B3202E;
-  /* rojo veneciano (acento / CTA) */
-  --terracota-dark: #8A1622;
-  --crema: #F8F4EC;
-  --arena: #E7DCC8;
-  --verde: #1E3A6B;
-  /* azul marino de la marca */
-  --verde-dark: #13264A;
-  --dorado: #C9A15B;
-  --carbon: #2B2420;
+  /* Paleta cálida inspirada en madera de recepción, caoba/espresso y dorado champán (sin azul) */
+  --terracota: #8E5B34;
+  /* bronce / madera caramelo (acentos, iconos y enlaces) */
+  --terracota-dark: #6E4322;
+  --crema: #FAF7F2;
+  --arena: #E8DDD0;
+  --verde: #5A2A14;
+  /* caoba cálido (hover botones primarios) */
+  --verde-dark: #381406;
+  /* espresso / caoba profundo (botones Reservar y superficies oscuras) */
+  --dorado: #DFBA84;
+  /* dorado champán cálido */
+  --carbon: #241914;
   /* madera oscura */
-  --gris: #6B635B;
+  --gris: #6A5D54;
   --blanco: #FFFFFF;
 
   --font-title: 'Fraunces', Georgia, serif;
@@ -23,8 +25,8 @@
 
   --radius: 18px;
   --radius-sm: 10px;
-  --shadow: 0 10px 30px rgba(42, 38, 34, .10);
-  --shadow-lg: 0 24px 60px rgba(42, 38, 34, .18);
+  --shadow: 0 10px 30px rgba(36, 25, 20, .10);
+  --shadow-lg: 0 24px 60px rgba(36, 25, 20, .18);
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
 
@@ -165,7 +167,7 @@ em {
   cursor: pointer;
   font: 600 1rem var(--font-body);
   transition: transform .3s var(--ease), background .3s, box-shadow .3s, color .3s;
-  box-shadow: 0 6px 18px rgba(19, 38, 74, .25);
+  box-shadow: 0 6px 18px rgba(56, 20, 6, .24);
   box-sizing: border-box;
 }
 
@@ -173,7 +175,7 @@ em {
   transform: translateY(-2px);
   background: var(--verde);
   color: var(--dorado);
-  box-shadow: 0 10px 24px rgba(19, 38, 74, .35);
+  box-shadow: 0 10px 24px rgba(56, 20, 6, .34);
 }
 
 .btn--ghost {
@@ -211,17 +213,17 @@ em {
 }
 
 .btn--whatsapp {
-  background: #128C7E;
-  border-color: #25D366;
+  background: var(--verde-dark);
+  border-color: var(--dorado);
   color: #ffffff;
-  box-shadow: 0 6px 18px rgba(18, 140, 126, .3);
+  box-shadow: 0 6px 18px rgba(56, 20, 6, .28);
 }
 
 .btn--whatsapp:hover {
-  background: #075E54;
-  border-color: #25D366;
-  color: #ffffff;
-  box-shadow: 0 10px 24px rgba(18, 140, 126, .45);
+  background: var(--verde);
+  border-color: var(--dorado);
+  color: var(--dorado);
+  box-shadow: 0 10px 24px rgba(56, 20, 6, .38);
 }
 
 .link {
@@ -246,12 +248,21 @@ em {
 }
 
 .nav.is-scrolled {
-  background: rgba(247, 241, 232, .85);
+  background: rgba(255, 255, 255, .94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: .65rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+  box-shadow: 0 4px 20px rgba(36, 25, 20, .07);
+  border-bottom: 1.5px solid rgba(142, 91, 52, .3);
   color: var(--carbon);
+}
+
+.nav.is-scrolled .nav__logo span {
+  color: var(--verde-dark);
+}
+
+.nav.is-scrolled .nav__links a:not(.btn)::after {
+  background: var(--terracota);
 }
 
 .nav__inner {
@@ -398,7 +409,7 @@ em {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(19, 38, 74, .92) 0%, rgba(19, 38, 74, .68) 50%, rgba(0, 0, 0, .25) 100%);
+  background: linear-gradient(100deg, rgba(50, 14, 2, .90) 0%, rgba(50, 14, 2, .62) 48%, rgba(20, 8, 2, .18) 100%);
 }
 
 .hero__slide-tag {
@@ -406,7 +417,7 @@ em {
   top: 5.5rem;
   right: 2rem;
   z-index: 2;
-  background: rgba(19, 38, 74, .75);
+  background: rgba(56, 20, 6, .82);
   backdrop-filter: blur(8px);
   border: 1px solid var(--dorado);
   color: var(--dorado);
@@ -485,7 +496,7 @@ em {
 }
 
 .btn--hero-toggle {
-  background: rgba(19, 38, 74, .85);
+  background: rgba(56, 20, 6, .88);
   backdrop-filter: blur(10px);
   border: 1.5px solid var(--dorado);
   color: var(--dorado);
@@ -740,7 +751,7 @@ em {
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--terracota);
-  border: 1.5px solid rgba(179, 32, 46, .45);
+  border: 1.5px solid rgba(142, 91, 52, .48);
   font-weight: 700;
   font-size: 1.05rem;
   transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
@@ -754,10 +765,10 @@ em {
 .room__body .link:hover,
 .room__body .link:focus-visible,
 .room__body .link:active {
-  background: var(--terracota);
+  background: var(--verde-dark);
   color: var(--blanco);
-  border-color: var(--terracota);
-  box-shadow: 0 6px 16px rgba(179, 32, 46, .25);
+  border-color: var(--verde-dark);
+  box-shadow: 0 6px 16px rgba(56, 20, 6, .25);
   transform: translateY(-2px);
   letter-spacing: 0;
 }
