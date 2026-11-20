@@ -1036,13 +1036,66 @@ em {
 }
 
 @media (max-width: 900px) {
-  .events-grid {
+  .events-grid,
+  .location-grid {
     grid-template-columns: 1fr;
   }
 
   .btn--events-cta {
     max-width: 100%;
   }
+
+  .location-map {
+    min-height: 320px;
+  }
+}
+
+/* ---------- Ubicación (Diseño Editorial) ---------- */
+.location-section {
+  background: var(--blanco);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.18fr;
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: center;
+}
+
+.location-info .rooms-eyebrow {
+  margin-bottom: .7rem;
+}
+
+.location-info h2 {
+  color: var(--verde-dark);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.12;
+  margin-bottom: .75rem;
+}
+
+.location-address {
+  color: var(--gris);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.location-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid #C99A4E;
+  box-shadow: var(--shadow-lg);
+  min-height: 430px;
+  height: 100%;
+  background: var(--crema);
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  border: 0;
+  display: block;
 }
 
 @media (max-width: 960px) {

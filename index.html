@@ -20,7 +20,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/recepcion.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=20261120c">
+  <link rel="stylesheet" href="css/styles.css?v=20261120d">
   <style>
     /* Galería deslizante editorial (Carrusel horizontal con vista previa lateral) */
     .hi-gallery { background: var(--crema); padding: clamp(3rem, 7vw, 5rem) 0; overflow: hidden; }
@@ -650,23 +650,66 @@
     </section>
 
     <!-- ===== Ubicación ===== -->
-    <section class="section" id="ubicacion">
-      <div class="container split__inner">
-        <div class="reveal">
-          <p class="eyebrow">Ubicación</p>
+    <section class="section location-section" id="ubicacion">
+      <div class="container location-grid">
+        <div class="location-info reveal">
+          <p class="rooms-eyebrow">Ubicación</p>
           <h2>A pasos de todo</h2>
-          <p class="address">📍 Colonia Alfonso XIII, cuadra y media al sur del Parque Central de Santa Bárbara,
-            Honduras.</p>
-          <ul class="checks">
-            <li>Parque Central – 2 min caminando</li>
-            <li>Catedral, bancos y comercios cercanos</li>
-            <li>Contamos con estacionamiento propio</li>
-            <li>Fácil acceso para vehículos</li>
+          <p class="location-address">Colonia Alfonso XIII, cuadra y media al sur del Parque Central de Santa Bárbara, Honduras.</p>
+
+          <ul class="events-list">
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <span>Parque Central<small>A solo 2 minutos caminando</small></span>
+            </li>
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V7l7-4 7 4v14"></path>
+                  <path d="M9 21v-6h6v6"></path>
+                </svg>
+              </span>
+              <span>Catedral, bancos y comercios cercanos</span>
+            </li>
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 17h14v-5l-2-5H7L5 12v5z"></path>
+                  <circle cx="7.5" cy="17.5" r="1.5"></circle>
+                  <circle cx="16.5" cy="17.5" r="1.5"></circle>
+                  <path d="M5 12h14"></path>
+                </svg>
+              </span>
+              <span>Estacionamiento privado<small>Propio del hotel para tu tranquilidad</small></span>
+            </li>
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                </svg>
+              </span>
+              <span>Fácil acceso para vehículos</span>
+            </li>
           </ul>
+
           <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras"
-            class="btn" target="_blank" rel="noopener" id="btn-mapa">Cómo llegar</a>
+            class="btn btn--events-cta" target="_blank" rel="noopener" id="btn-mapa">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Cómo llegar</span>
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
-        <div class="map reveal">
+
+        <div class="location-map reveal">
           <iframe title="Mapa Hotel Venecia"
             src="https://www.google.com/maps?q=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras&z=17&output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
