@@ -19,8 +19,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/fachada.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=20261119a">
+  <link rel="preload" as="image" href="assets/img/recepcion.jpg">
+  <link rel="stylesheet" href="css/styles.css?v=20261119b">
   <style>
     /* Galería deslizante estilo Holiday Inn (Carrusel horizontal con vista previa lateral) */
     .hi-gallery { background: var(--blanco); padding: clamp(3rem, 7vw, 5.5rem) 0; overflow: hidden; }
@@ -46,24 +46,8 @@
     .hi-gallery__progress { width: 140px; height: 4px; background: var(--arena); border-radius: 999px; overflow: hidden; }
     .hi-gallery__progress-bar { height: 100%; background: var(--dorado); width: 16.66%; transition: width .45s ease; }
 
-    /* Corrección responsive Hero, Features, Galería y Botones en móvil */
-    .hero__content { padding: 7rem 0 7.5rem !important; }
-    .hero__dots { bottom: 4.8rem !important; }
+    /* Ajustes responsive Galería, Botones y Flotantes en móvil */
     @media (max-width: 860px) {
-      .hero { min-height: auto !important; padding: 5.8rem 0 3.8rem !important; align-items: flex-start !important; }
-      .hero__content { padding: .5rem 0 1.5rem !important; width: min(1180px, 90%) !important; }
-      .hero__logo { width: 155px !important; margin-bottom: .75rem !important; }
-      .hero h1 { font-size: clamp(1.95rem, 7.5vw, 2.6rem) !important; line-height: 1.15 !important; }
-      .hero__lead { font-size: .98rem !important; margin: .9rem 0 1.25rem !important; line-height: 1.5 !important; }
-      .hero__booking-toggle { margin-top: 1rem !important; width: 100%; }
-      .btn--hero-toggle { width: 100%; justify-content: space-between; font-size: .9rem !important; padding: .8rem 1.1rem !important; }
-      .hero__dots { bottom: 1.2rem !important; }
-      .features { margin-top: 0 !important; padding-top: 2.2rem !important; padding-bottom: 2.5rem !important; background: var(--crema); }
-      .features .grid--4 { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .feature { padding: 1.35rem 1.15rem !important; }
-      .feature__icon { width: 46px !important; height: 46px !important; font-size: 1.35rem !important; margin-bottom: .7rem !important; }
-      .feature h3 { font-size: 1.1rem !important; }
-      .feature p { font-size: .86rem !important; line-height: 1.4 !important; }
       .split__media { margin-bottom: 1.2rem; }
       .btn--toggle-form { width: 100%; height: 52px; justify-content: space-between; margin-top: 1rem; }
       .btn--corporate { font-size: .88rem !important; padding: 0 1rem !important; }
@@ -77,7 +61,6 @@
       .hi-gallery__caption p { font-size: .8rem; line-height: 1.35; }
     }
     @media (max-width: 520px) {
-      .features .grid--4 { grid-template-columns: 1fr; }
       .wa-float { width: 52px !important; height: 52px !important; right: 1rem !important; bottom: 1rem !important; }
       .chat-toggle { width: 48px !important; height: 48px !important; right: 1.1rem !important; bottom: 4.8rem !important; }
       .chat-panel { right: .8rem !important; bottom: 8.4rem !important; width: calc(100vw - 1.6rem) !important; }
@@ -116,7 +99,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Hotel",l
+    "@type": "Hotel",
     "name": "Hotel Plaza Venecia",
     "url": "https://www.hotelveneciahn.com/",
     "telephone": "+504 9937-7949",
@@ -143,15 +126,28 @@
   <!-- ===== Navegación ===== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#inicio" class="nav__logo" id="nav-logo"><span>Hotel Plaza Venecia</span></a>
+      <a href="#inicio" class="nav__logo" id="nav-logo">
+        <img src="assets/img/logo-dorado.png" alt="Hotel Plaza Venecia" width="136" height="65">
+      </a>
       <nav aria-label="Principal">
         <ul class="nav__links" id="nav-links">
-          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#inicio" class="is-active">Inicio</a></li>
           <li><a href="#habitaciones">Habitaciones</a></li>
-          <li><a href="#restaurante">Restaurante</a></li>
+          <li><a href="#galeria">Galería</a></li>
           <li><a href="#eventos">Eventos</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
-          <li><a href="#contacto" class="btn btn--sm">Reservar</a></li>
+          <li class="nav__cta-item">
+            <a href="#contacto" class="btn btn--nav-cta">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+              </svg>
+              Reservar
+            </a>
+          </li>
         </ul>
       </nav>
       <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú"
@@ -160,64 +156,91 @@
   </header>
 
   <main>
-    <!-- ===== Portada con Galería Carousel estilo Hotel Moderno ===== -->
-    <section class="hero" id="inicio" aria-label="Galería principal Hotel Plaza Venecia">
+    <!-- ===== Portada Editorial ===== -->
+    <section class="hero" id="inicio" aria-label="Portada Hotel Plaza Venecia">
       <div class="hero__slider" id="hero-slider">
-        <div class="hero__slide is-active" style="background-image:url('assets/img/fachada.jpg')">
-          <span class="hero__slide-tag">Fachada Colonial Moderna</span>
-        </div>
-        <div class="hero__slide" style="background-image:url('assets/img/recepcion.jpg')">
-          <span class="hero__slide-tag">Recepción &amp; Atención Cercana</span>
-        </div>
-        <div class="hero__slide" style="background-image:url('assets/img/habitacion.png')">
-          <span class="hero__slide-tag">Habitaciones Climatizadas</span>
-        </div>
-        <div class="hero__slide" style="background-image:url('assets/img/bar-venetto.jpg')">
-          <span class="hero__slide-tag">Bar Venetto &amp; Relajación</span>
-        </div>
+        <div class="hero__slide is-active" style="background-image:url('assets/img/recepcion.jpg')"></div>
+        <div class="hero__slide" style="background-image:url('assets/img/fachada.jpg')"></div>
+        <div class="hero__slide" style="background-image:url('assets/img/habitacion.png')"></div>
+        <div class="hero__slide" style="background-image:url('assets/img/bar-venetto.jpg')"></div>
       </div>
 
-      <!-- Controles del Slider -->
-      <button type="button" class="hero__arrow hero__arrow--prev" id="hero-prev" aria-label="Foto anterior">&#10094;</button>
-      <button type="button" class="hero__arrow hero__arrow--next" id="hero-next" aria-label="Foto siguiente">&#10095;</button>
-
       <div class="container hero__content">
-        <img src="assets/img/logo-dorado.png" alt="Hotel Plaza Venecia" class="hero__logo" width="260" height="125">
-        <p class="eyebrow">Santa Bárbara · Honduras</p>
-        <h1>Tu casa en el corazón<br>de <em>Santa Bárbara</em></h1>
-        <p class="hero__lead">El confort moderno y la calidez de nuestra gente, a solo cuadra y media del Parque Central.</p>
-        
-        <!-- Botón para desplegar / ocultar barra de reserva rápida -->
-        <div class="hero__booking-toggle">
-          <button type="button" class="btn btn--hero-toggle" id="btn-toggle-booking-bar" aria-expanded="false" aria-controls="hero-booking-bar">
-            <span>📅 Consultar fechas y disponibilidad</span>
-            <span class="booking-toggle-icon">▼</span>
-          </button>
-        </div>
+        <p class="hero__eyebrow">Santa Bárbara · Honduras</p>
+        <span class="hero__divider" aria-hidden="true"></span>
+        <h1>Hospédate en<br><em>Hotel Venecia.</em></h1>
+      </div>
 
-        <!-- Barra de reserva rápida moderna (Booking Bar desplegable) -->
+      <!-- Indicadores discretos del slider -->
+      <div class="hero__dots" id="hero-dots">
+        <button type="button" class="hero__dot is-active" data-slide="0" aria-label="Recepción"></button>
+        <button type="button" class="hero__dot" data-slide="1" aria-label="Fachada"></button>
+        <button type="button" class="hero__dot" data-slide="2" aria-label="Habitaciones"></button>
+        <button type="button" class="hero__dot" data-slide="3" aria-label="Bar Venetto"></button>
+      </div>
+    </section>
+
+    <!-- ===== Barra Flotante de Consulta Rápida ===== -->
+    <div class="booking-bar-wrap">
+      <div class="container">
         <div class="booking-bar" id="hero-booking-bar">
-          <div class="booking-bar__item">
-            <label for="bb-habitacion">Habitación</label>
-            <select id="bb-habitacion">
-              <option value="Sencilla">Sencilla</option>
-              <option value="Doble">Doble</option>
-              <option value="Triple">Triple</option>
-              <option value="Suite">Suite</option>
-              <option value="Tarifa Corporativa">Tarifa Corporativa</option>
-            </select>
-          </div>
-          <div class="booking-bar__item">
-            <label for="bb-llegada">Llegada</label>
-            <input type="date" id="bb-llegada">
-          </div>
-          <div class="booking-bar__item">
-            <label for="bb-salida">Salida</label>
-            <input type="date" id="bb-salida">
-          </div>
+          <label class="booking-bar__field" for="bb-llegada">
+            <span class="booking-bar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2.5"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+              </svg>
+            </span>
+            <span class="booking-bar__input-wrap">
+              <span class="booking-bar__label">Llegada</span>
+              <input type="date" id="bb-llegada" aria-label="Fecha de llegada">
+            </span>
+          </label>
+
+          <label class="booking-bar__field" for="bb-salida">
+            <span class="booking-bar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2.5"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+              </svg>
+            </span>
+            <span class="booking-bar__input-wrap">
+              <span class="booking-bar__label">Salida</span>
+              <input type="date" id="bb-salida" aria-label="Fecha de salida">
+            </span>
+          </label>
+
+          <label class="booking-bar__field" for="bb-habitacion">
+            <span class="booking-bar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5"></path>
+                <path d="M2 16h20"></path>
+                <path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"></path>
+                <path d="M7 11V9.5a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1V11"></path>
+                <path d="M12.5 11V9.5a1 1 0 0 1 1-1H16a1 1 0 0 1 1 1V11"></path>
+              </svg>
+            </span>
+            <span class="booking-bar__input-wrap">
+              <span class="booking-bar__label">Habitación</span>
+              <select id="bb-habitacion" aria-label="Tipo de habitación">
+                <option value="">Selecciona una opción</option>
+                <option value="Sencilla">Sencilla</option>
+                <option value="Doble">Doble</option>
+                <option value="Triple">Triple</option>
+                <option value="Suite">Suite</option>
+              </select>
+            </span>
+          </label>
+
           <div class="booking-bar__action">
             <button type="button" class="btn btn--whatsapp" id="bb-consultar">
-              <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+              <svg viewBox="0 0 32 32" width="19" height="19" fill="currentColor" aria-hidden="true">
                 <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z" />
               </svg>
               Consultar por WhatsApp
@@ -225,42 +248,45 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Indicadores de la galería -->
-      <div class="hero__dots" id="hero-dots">
-        <button type="button" class="hero__dot is-active" data-slide="0" aria-label="Foto 1"></button>
-        <button type="button" class="hero__dot" data-slide="1" aria-label="Foto 2"></button>
-        <button type="button" class="hero__dot" data-slide="2" aria-label="Foto 3"></button>
-        <button type="button" class="hero__dot" data-slide="3" aria-label="Foto 4"></button>
-      </div>
-
-      <div class="hero__badge glass">
-        <strong>1½</strong><span>cuadras del<br>Parque Central</span>
-      </div>
-    </section>
-
-    <!-- ===== Por qué elegirnos ===== -->
-    <section class="section features">
-      <div class="container grid grid--4">
+    <!-- ===== Pilares de Hospitalidad ===== -->
+    <section class="section features" aria-label="Ventajas del hotel">
+      <div class="container features__grid">
         <article class="feature reveal">
-          <div class="feature__icon">📍</div>
-          <h3>Céntrico</h3>
-          <p>Camina al parque, iglesia, bancos y comercios en minutos.</p>
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Ubicación céntrica</h3>
+          <p>A cuadra y media del Parque Central.</p>
         </article>
         <article class="feature reveal">
-          <div class="feature__icon">🛡️</div>
-          <h3>Seguro</h3>
-          <p>Un lugar tranquilo y vigilado para que descanses sin preocupaciones.</p>
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 19v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5"></path>
+              <path d="M2 17h20"></path>
+              <path d="M5 12V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V12"></path>
+              <path d="M7 12v-1.5a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1V12"></path>
+              <path d="M12.5 12v-1.5a1 1 0 0 1 1-1H16a1 1 0 0 1 1 1V12"></path>
+            </svg>
+          </div>
+          <h3>Descanso y confort</h3>
+          <p>Habitaciones climatizadas para tu comodidad.</p>
         </article>
         <article class="feature reveal">
-          <div class="feature__icon">🏡</div>
-          <h3>Como en casa</h3>
-          <p>Trato cercano y familiar desde que llegas hasta que te vas.</p>
-        </article>
-        <article class="feature reveal">
-          <div class="feature__icon">🍝</div>
-          <h3>Restaurante y bar</h3>
-          <p>Buena comida y el ambiente del Bar Venetto sin salir del hotel.</p>
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+              <circle cx="10" cy="7" r="3.5"></circle>
+              <path d="M21 21v-2a3.5 3.5 0 0 0-2.5-3.35"></path>
+              <path d="M15.5 3.65a3.5 3.5 0 0 1 0 6.7"></path>
+            </svg>
+          </div>
+          <h3>Atención personalizada</h3>
+          <p>Hospitalidad cercana durante tu estadía.</p>
         </article>
       </div>
     </section>
@@ -427,29 +453,6 @@
                 disponibilidad →</a>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Restaurante y Bar ===== -->
-    <section class="section split" id="restaurante">
-      <div class="container split__inner">
-        <div class="split__media reveal"><img src="assets/img/restaurante.jpg" class="split__inset"
-            alt="Restaurante del Hotel Venecia" loading="lazy" width="294" height="312"><img
-            src="assets/img/bar-venetto.jpg" class="split__tall" alt="Bar Venetto del Hotel Venecia" loading="lazy"
-            width="294" height="428"></div>
-        <div class="split__text reveal">
-          <p class="eyebrow">Restaurante · Bar Venetto</p>
-          <h2>Sabores que te hacen sentir en casa</h2>
-          <p>Desayunos para empezar bien el día, almuerzos y cenas preparados con cariño. Y por la noche, relájate en el
-            <strong>Bar Venetto</strong> con una bebida y buena compañía.</p>
-          <ul class="checks">
-            <li>Desayunos para huéspedes y visitantes</li>
-            <li>Platos nacionales e internacionales</li>
-            <li>Bar Venetto: bebidas y ambiente relajado</li>
-          </ul>
-          <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20informaci%C3%B3n%20del%20restaurante" class="btn"
-            target="_blank" rel="noopener" id="btn-restaurante">Pedir información</a>
         </div>
       </div>
     </section>
@@ -622,7 +625,7 @@
       <div>
         <img src="assets/img/logo-dorado.png" alt="Hotel Venecia" class="footer__logo" width="200" height="96"
           loading="lazy">
-        <p>Hospedaje · Restaurante · Bar Venetto · Eventos</p>
+        <p>Hospedaje · Galería · Eventos · Santa Bárbara</p>
       </div>
       <div>
         <p>Colonia Alfonso XIII, Santa Bárbara, Honduras</p>
@@ -673,7 +676,7 @@
     </form>
   </section>
 
-  <script src="js/main.js?v=20261118e" defer></script>
+  <script src="js/main.js?v=20261119b" defer></script>
   <script src="js/chatbot.js?v=20261118e" defer></script>
 </body>
 

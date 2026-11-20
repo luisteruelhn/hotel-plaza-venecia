@@ -18,7 +18,15 @@
     toggle.setAttribute('aria-expanded', String(open));
   };
   toggle.addEventListener('click', () => setMenu(!links.classList.contains('is-open')));
-  links.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  links.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    setMenu(false);
+    if (!a.classList.contains('btn')) {
+      links.querySelectorAll('a:not(.btn)').forEach((el) => el.classList.remove('is-active'));
+      a.classList.add('is-active');
+    }
+  });
 
   // Mostrar elementos sin repetir animaciones de entrada al hacer scroll
   document.querySelectorAll('.reveal').forEach((el) => {
@@ -168,7 +176,7 @@
     });
 
     bbBtn.addEventListener('click', () => {
-      const hab = bbHabitacion ? bbHabitacion.value : 'Sencilla';
+      const hab = (bbHabitacion && bbHabitacion.value) ? bbHabitacion.value : 'Por definir';
       const fIn = bbLlegada.value || 'Por coordinar';
       const fOut = bbSalida.value || 'Por coordinar';
       const msg = `Hola Hotel Plaza Venecia, quisiera consultar disponibilidad y tarifa:\n• Habitación: ${hab}\n• Llegada: ${fIn}\n• Salida: ${fOut}`;
