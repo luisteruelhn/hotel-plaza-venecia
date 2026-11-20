@@ -1850,6 +1850,14 @@ em {
     align-items: center;
   }
 
+  .hero__slide {
+    background-position: 62% center;
+  }
+
+  .hero__slide::after {
+    background: linear-gradient(180deg, rgba(32, 9, 2, .76) 0%, rgba(32, 9, 2, .74) 55%, rgba(32, 9, 2, .52) 100%);
+  }
+
   .hero__content {
     padding: 2.5rem 0 4.2rem;
     width: min(1180px, 90%);
@@ -1858,6 +1866,7 @@ em {
   .hero h1 {
     font-size: clamp(2.1rem, 8.5vw, 2.8rem);
     line-height: 1.1;
+    text-shadow: 0 3px 18px rgba(18, 5, 1, .75);
   }
 
   .hero__dots {
