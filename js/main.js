@@ -214,8 +214,53 @@
       btnEventos.setAttribute('aria-expanded', String(isOpen));
       const icon = document.getElementById('btn-eventos-icon');
       const txt = document.getElementById('btn-eventos-text');
-      if (icon) icon.textContent = isOpen ? '▲' : '▼';
+      if (icon) icon.textContent = isOpen ? '▲' : '→';
       if (txt) txt.textContent = isOpen ? 'Ocultar cotizador' : 'Cotizar mi evento';
+    });
+  }
+
+  // ===== Galería Interactiva de Salones (Eventos) =====
+  const evGalImg = document.getElementById('ev-gallery-img');
+  const evGalThumbs = document.querySelectorAll('.events-gallery__thumb');
+  const evGalDots = document.querySelectorAll('.events-gallery__dot');
+  const evGalPrev = document.getElementById('ev-gal-prev');
+  const evGalNext = document.getElementById('ev-gal-next');
+  const evSlides = [
+    { src: 'assets/img/salon.jpg?v=20261120c', alt: 'Salón para capacitaciones y eventos con proyector en Hotel Plaza Venecia' },
+    { src: 'assets/img/salon-banquete.jpg?v=20261120c', alt: 'Salón montaje banquete con alfombra roja en Hotel Plaza Venecia' },
+    { src: 'assets/img/salon-ejecutivo.jpg?v=20261120c', alt: 'Salón ejecutivo con mesa de directorio en Hotel Plaza Venecia' }
+  ];
+  let evIndex = 0;
+
+  const setEventsSlide = (newIdx) => {
+    if (!evGalImg) return;
+    evIndex = (newIdx + evSlides.length) % evSlides.length;
+    evGalImg.src = evSlides[evIndex].src;
+    evGalImg.alt = evSlides[evIndex].alt;
+
+    const otherIndices = [0, 1, 2].filter((i) => i !== evIndex);
+    evGalThumbs.forEach((btn, pos) => {
+      const targetIdx = otherIndices[pos];
+      if (targetIdx === undefined) return;
+      btn.dataset.idx = String(targetIdx);
+      const imgEl = btn.querySelector('img');
+      if (imgEl) {
+        imgEl.src = evSlides[targetIdx].src;
+        imgEl.alt = evSlides[targetIdx].alt;
+      }
+    });
+
+    evGalDots.forEach((dot, i) => dot.classList.toggle('is-active', i === evIndex));
+  };
+
+  if (evGalImg) {
+    if (evGalPrev) evGalPrev.addEventListener('click', () => setEventsSlide(evIndex - 1));
+    if (evGalNext) evGalNext.addEventListener('click', () => setEventsSlide(evIndex + 1));
+    evGalThumbs.forEach((btn) => {
+      btn.addEventListener('click', () => setEventsSlide(Number(btn.dataset.idx)));
+    });
+    evGalDots.forEach((dot) => {
+      dot.addEventListener('click', () => setEventsSlide(Number(dot.dataset.idx)));
     });
   }
 

@@ -841,6 +841,210 @@ em {
   box-shadow: 0 14px 30px rgba(56, 20, 6, .32);
 }
 
+/* ---------- Eventos (Diseño Editorial con Galería Interactiva) ---------- */
+.events-section {
+  background: var(--crema);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.18fr;
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: start;
+}
+
+.events-info .rooms-eyebrow {
+  margin-bottom: .75rem;
+}
+
+.events-info h2 {
+  color: var(--verde-dark);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.12;
+  margin-bottom: 1.5rem;
+}
+
+.events-list {
+  margin-bottom: 1.9rem;
+}
+
+.events-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid rgba(232, 221, 208, .9);
+  color: var(--carbon);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.events-list__item:last-child {
+  border-bottom: 0;
+}
+
+.events-list__item span small,
+.events-list__item span strong {
+  display: block;
+}
+
+.events-list__item span small {
+  font-size: .88rem;
+  font-weight: 400;
+  color: var(--gris);
+  margin-top: .12rem;
+}
+
+.events-list__item span strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--verde-dark);
+  margin-top: .08rem;
+}
+
+.events-list__icon {
+  color: var(--terracota);
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.btn--events-cta {
+  width: 100%;
+  max-width: 360px;
+  height: 54px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4D1E0B 0%, #341104 100%);
+  border: 1.5px solid #4D1E0B;
+  color: var(--blanco);
+  font-size: 1.05rem;
+  font-weight: 600;
+  gap: .85rem;
+  box-shadow: 0 12px 26px rgba(56, 20, 6, .22);
+}
+
+.btn--events-cta:hover {
+  background: linear-gradient(180deg, #5E2812 0%, #3E1506 100%);
+  border-color: var(--dorado);
+  color: var(--dorado);
+}
+
+.events-gallery__main {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid #C99A4E;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 16 / 10.5;
+  background: var(--arena);
+}
+
+.events-gallery__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity .25s ease;
+}
+
+.events-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, .92);
+  color: var(--carbon);
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(36, 25, 20, .2);
+  transition: transform .2s, background .2s, color .2s;
+}
+
+.events-gallery__arrow:hover {
+  background: var(--verde-dark);
+  color: var(--dorado);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.events-gallery__arrow--prev {
+  left: .85rem;
+}
+
+.events-gallery__arrow--next {
+  right: .85rem;
+}
+
+.events-gallery__thumbs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.events-gallery__thumb {
+  border: 2px solid rgba(201, 154, 78, .55);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  aspect-ratio: 16 / 9.2;
+  box-shadow: var(--shadow);
+  transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
+}
+
+.events-gallery__thumb:hover {
+  transform: translateY(-3px);
+  border-color: #C99A4E;
+  box-shadow: var(--shadow-lg);
+}
+
+.events-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.events-gallery__dots {
+  display: flex;
+  justify-content: center;
+  gap: .55rem;
+  margin-top: 1rem;
+}
+
+.events-gallery__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: #DEC9AF;
+  cursor: pointer;
+  transition: background .25s, transform .25s;
+}
+
+.events-gallery__dot.is-active {
+  background: var(--terracota);
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--events-cta {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 960px) {
   .rooms-grid {
     grid-template-columns: repeat(2, 1fr);
