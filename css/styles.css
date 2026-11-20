@@ -388,7 +388,7 @@ em {
 /* ---------- Hero Editorial ---------- */
 .hero {
   position: relative;
-  min-height: clamp(500px, 64vh, 620px);
+  min-height: clamp(400px, 34vw, 500px);
   display: flex;
   align-items: center;
   color: var(--blanco);
@@ -404,10 +404,10 @@ em {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center 22%;
+  background-position: right center;
   opacity: 0;
   transition: opacity .9s ease-in-out, transform 6s ease-out;
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .hero__slide.is-active {
@@ -419,7 +419,7 @@ em {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, rgba(40, 11, 2, .86) 0%, rgba(40, 11, 2, .48) 32%, rgba(30, 10, 2, .08) 56%, transparent 100%);
+  background: linear-gradient(95deg, rgba(40, 11, 2, .72) 0%, rgba(40, 11, 2, .32) 32%, transparent 56%);
 }
 
 .hero__content {
