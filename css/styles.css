@@ -269,9 +269,10 @@ em {
 }
 
 .nav__logo img {
-  height: 70px;
+  height: 72px;
   width: auto;
-  clip-path: inset(3px);
+  object-fit: contain;
+  display: block;
   transition: height .3s;
 }
 
