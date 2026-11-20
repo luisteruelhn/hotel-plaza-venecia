@@ -178,9 +178,14 @@
   if (bbLlegada && bbSalida && bbBtn) {
     bbLlegada.min = hoyStr;
     bbSalida.min = hoyStr;
+    const syncDatePlaceholder = (inp) => inp.classList.toggle('date-empty', !inp.value);
+    syncDatePlaceholder(bbLlegada);
+    syncDatePlaceholder(bbSalida);
     bbLlegada.addEventListener('change', () => {
       bbSalida.min = bbLlegada.value || hoyStr;
+      syncDatePlaceholder(bbLlegada);
     });
+    bbSalida.addEventListener('change', () => syncDatePlaceholder(bbSalida));
 
     bbBtn.addEventListener('click', () => {
       const hab = (bbHabitacion && bbHabitacion.value) ? bbHabitacion.value : 'Por definir';

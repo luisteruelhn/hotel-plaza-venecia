@@ -563,6 +563,21 @@ em {
   color: var(--carbon);
 }
 
+.booking-bar__field input[type="date"].date-empty {
+  position: relative;
+  color: transparent;
+}
+
+.booking-bar__field input[type="date"].date-empty::before {
+  content: attr(data-placeholder);
+  color: var(--gris);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .booking-bar__action {
   padding-left: .6rem;
 }
