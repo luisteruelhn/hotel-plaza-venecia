@@ -417,7 +417,7 @@ em {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, rgba(40, 11, 2, .72) 0%, rgba(40, 11, 2, .32) 32%, transparent 56%);
+  background: linear-gradient(95deg, rgba(34, 9, 2, .88) 0%, rgba(34, 9, 2, .56) 36%, rgba(34, 9, 2, .12) 58%, transparent 72%);
 }
 
 .hero__content {
