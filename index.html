@@ -22,29 +22,30 @@
   <link rel="preload" as="image" href="assets/img/recepcion.jpg">
   <link rel="stylesheet" href="css/styles.css?v=20261120c">
   <style>
-    /* Galería deslizante estilo Holiday Inn (Carrusel horizontal con vista previa lateral) */
-    .hi-gallery { background: var(--blanco); padding: clamp(3rem, 7vw, 5.5rem) 0; overflow: hidden; }
-    .hi-gallery__head { text-align: center; max-width: 680px; margin: 0 auto 1.5rem; }
+    /* Galería deslizante editorial (Carrusel horizontal con vista previa lateral) */
+    .hi-gallery { background: var(--crema); padding: clamp(3rem, 7vw, 5rem) 0; overflow: hidden; }
+    .hi-gallery__head { text-align: center; max-width: 680px; margin: 0 auto 1.6rem; }
+    .hi-gallery__head h2 { color: var(--verde-dark); margin-bottom: .45rem; }
     .hi-gallery__head p { color: var(--gris); }
-    .hi-gallery__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 auto 1.8rem; max-width: 900px; padding: 0 1rem; }
-    .hi-gallery__tab { background: var(--crema); border: 1.5px solid var(--arena); color: var(--verde-dark); font: 600 .83rem var(--font-body); padding: .5rem 1rem; border-radius: 999px; cursor: pointer; transition: all .25s ease; white-space: nowrap; }
-    .hi-gallery__tab:hover { border-color: var(--terracota); }
-    .hi-gallery__tab.is-active { background: var(--verde-dark); color: var(--dorado); border-color: var(--dorado); box-shadow: 0 4px 12px rgba(56, 20, 6, .20); }
+    .hi-gallery__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; margin: 0 auto 2rem; max-width: 920px; padding: 0 1rem; }
+    .hi-gallery__tab { background: #F5EDE3; border: 1.5px solid var(--arena); color: var(--carbon); font: 600 .88rem var(--font-body); padding: .55rem 1.35rem; border-radius: 999px; cursor: pointer; transition: all .25s ease; white-space: nowrap; }
+    .hi-gallery__tab:hover { border-color: #C99A4E; color: var(--verde-dark); }
+    .hi-gallery__tab.is-active { background: linear-gradient(180deg, #683016 0%, #3E1506 100%); color: var(--blanco); border-color: #C99A4E; box-shadow: 0 6px 16px rgba(56, 20, 6, .22); }
     .hi-gallery__viewport { position: relative; width: 100%; max-width: 1280px; margin: 0 auto; overflow: hidden; padding: .5rem 0 1rem; touch-action: pan-y; }
     .hi-gallery__track { display: flex; align-items: center; transition: transform .65s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
     .hi-gallery__card { flex: 0 0 70%; max-width: 860px; aspect-ratio: 16 / 9; margin: 0 1.2%; border-radius: var(--radius); overflow: hidden; position: relative; background-size: cover; background-position: center; box-shadow: var(--shadow-lg); transform: scale(0.91); opacity: .48; transition: transform .6s cubic-bezier(0.22, 1, 0.36, 1), opacity .6s ease, box-shadow .6s ease; cursor: pointer; }
-    .hi-gallery__card.is-active { transform: scale(1); opacity: 1; cursor: default; outline: 2px solid rgba(223, 186, 132, .65); }
-    .hi-gallery__card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(42, 16, 6, .92) 0%, rgba(42, 16, 6, .35) 45%, transparent 100%); }
-    .hi-gallery__caption { position: absolute; inset: auto 0 0; z-index: 2; padding: 1.8rem 2rem 1.4rem; color: var(--blanco); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
-    .hi-gallery__tag { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--dorado); background: rgba(56, 20, 6, .82); border: 1px solid var(--dorado); padding: .22rem .65rem; border-radius: 999px; margin-bottom: .45rem; }
-    .hi-gallery__caption h3 { font-family: var(--font-title); font-size: clamp(1.15rem, 2.2vw, 1.6rem); margin: 0 0 .25rem; color: var(--blanco); }
-    .hi-gallery__caption p { font-size: .92rem; opacity: .9; margin: 0; max-width: 540px; }
-    .hi-gallery__controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1rem; }
-    .hi-gallery__btn { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--dorado); background: var(--verde-dark); color: var(--dorado); display: grid; place-items: center; cursor: pointer; font-size: 1rem; transition: transform .2s, background .25s, color .25s; }
-    .hi-gallery__btn:hover { background: var(--verde); color: var(--blanco); transform: scale(1.07); }
-    .hi-gallery__counter { font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: var(--verde-dark); min-width: 64px; text-align: center; }
-    .hi-gallery__progress { width: 140px; height: 4px; background: var(--arena); border-radius: 999px; overflow: hidden; }
-    .hi-gallery__progress-bar { height: 100%; background: var(--dorado); width: 16.66%; transition: width .45s ease; }
+    .hi-gallery__card.is-active { transform: scale(1); opacity: 1; cursor: default; border: 2px solid #C99A4E; }
+    .hi-gallery__card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(36, 14, 4, .90) 0%, rgba(36, 14, 4, .32) 45%, transparent 100%); }
+    .hi-gallery__caption { position: absolute; inset: auto 0 0; z-index: 2; padding: 1.8rem 2rem 1.5rem; color: var(--blanco); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+    .hi-gallery__tag { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blanco); background: linear-gradient(180deg, #B56C2A 0%, #8C4E19 100%); padding: .28rem .85rem; border-radius: 999px; margin-bottom: .5rem; box-shadow: 0 3px 10px rgba(0, 0, 0, .25); }
+    .hi-gallery__caption h3 { font-family: var(--font-title); font-size: clamp(1.25rem, 2.4vw, 1.75rem); margin: 0 0 .25rem; color: var(--blanco); }
+    .hi-gallery__caption p { font-size: .94rem; opacity: .94; margin: 0; max-width: 540px; }
+    .hi-gallery__controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1.1rem; }
+    .hi-gallery__btn { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid #4D1E0B; background: linear-gradient(180deg, #4D1E0B 0%, #341104 100%); color: var(--blanco); display: grid; place-items: center; cursor: pointer; font-size: .95rem; transition: transform .2s, border-color .25s, color .25s; box-shadow: 0 6px 14px rgba(56, 20, 6, .2); }
+    .hi-gallery__btn:hover { border-color: #C99A4E; color: var(--dorado); transform: scale(1.07); }
+    .hi-gallery__counter { font-family: var(--font-title); font-size: 1.02rem; font-weight: 700; color: var(--verde-dark); min-width: 60px; text-align: center; }
+    .hi-gallery__progress { width: 140px; height: 5px; background: var(--arena); border-radius: 999px; overflow: hidden; }
+    .hi-gallery__progress-bar { height: 100%; background: #C99A4E; width: 20%; transition: width .45s ease; }
 
     /* Ajustes responsive Galería, Botones y Flotantes en móvil */
     @media (max-width: 860px) {
@@ -289,21 +290,20 @@
       </div>
     </section>
 
-    <!-- ===== Galería Deslizante estilo Holiday Inn ("La galería que pasa") ===== -->
+    <!-- ===== Galería Deslizante Editorial ("Instalaciones") ===== -->
     <section class="section hi-gallery" id="galeria" aria-label="Galería de instalaciones">
       <div class="container hi-gallery__head">
-        <p class="eyebrow">Recorrido visual</p>
+        <p class="rooms-eyebrow">Instalaciones</p>
         <h2>Conoce nuestras instalaciones</h2>
-        <p>Desliza por nuestros espacios pensados para tu comodidad, trabajo y descanso en el corazón de Santa Bárbara.</p>
+        <p>Desliza por nuestros espacios pensados para tu comodidad.</p>
       </div>
 
       <div class="hi-gallery__tabs" id="hi-gallery-tabs" role="tablist">
-        <button type="button" class="hi-gallery__tab is-active" data-idx="0">01 · Recepción</button>
-        <button type="button" class="hi-gallery__tab" data-idx="1">02 · Habitaciones</button>
-        <button type="button" class="hi-gallery__tab" data-idx="2">03 · Restaurante</button>
-        <button type="button" class="hi-gallery__tab" data-idx="3">04 · Bar Venetto</button>
-        <button type="button" class="hi-gallery__tab" data-idx="4">05 · Cava &amp; Licores</button>
-        <button type="button" class="hi-gallery__tab" data-idx="5">06 · Salones</button>
+        <button type="button" class="hi-gallery__tab is-active" data-idx="0">Lobby</button>
+        <button type="button" class="hi-gallery__tab" data-idx="1">Habitaciones</button>
+        <button type="button" class="hi-gallery__tab" data-idx="2">Bar Venetto</button>
+        <button type="button" class="hi-gallery__tab" data-idx="3">Cava &amp; Licores</button>
+        <button type="button" class="hi-gallery__tab" data-idx="4">Salones de eventos</button>
       </div>
 
       <div class="hi-gallery__viewport" id="hi-gallery-viewport">
@@ -311,9 +311,9 @@
           <article class="hi-gallery__card is-active" data-idx="0" style="background-image:url('assets/img/recepcion.jpg')">
             <div class="hi-gallery__caption">
               <div>
-                <span class="hi-gallery__tag">Bienvenida</span>
-                <h3>Recepción &amp; Atención Cercana</h3>
-                <p>Acabados en madera tradicional y atención cálida para que te sientas como en casa desde que llegas.</p>
+                <span class="hi-gallery__tag">Atención y bienvenida</span>
+                <h3>Lobby</h3>
+                <p>Un ambiente acogedor desde el primer momento.</p>
               </div>
             </div>
           </article>
@@ -328,17 +328,7 @@
             </div>
           </article>
 
-          <article class="hi-gallery__card" data-idx="2" style="background-image:url('assets/img/restaurante.jpg')">
-            <div class="hi-gallery__caption">
-              <div>
-                <span class="hi-gallery__tag">Gastronomía</span>
-                <h3>Restaurante con Sazón Casero</h3>
-                <p>Desayunos, almuerzos y cenas preparados al momento sin salir del hotel.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="hi-gallery__card" data-idx="3" style="background-image:url('assets/img/bar-venetto.jpg?v=20261120b')">
+          <article class="hi-gallery__card" data-idx="2" style="background-image:url('assets/img/bar-venetto.jpg?v=20261120b')">
             <div class="hi-gallery__caption">
               <div>
                 <span class="hi-gallery__tag">Ambiente &amp; Bebidas</span>
@@ -348,7 +338,7 @@
             </div>
           </article>
 
-          <article class="hi-gallery__card" data-idx="4" style="background-image:url('assets/img/bar-venetto-licores.jpg?v=20261120b');background-position:center 35%">
+          <article class="hi-gallery__card" data-idx="3" style="background-image:url('assets/img/bar-venetto-licores.jpg?v=20261120b');background-position:center 35%">
             <div class="hi-gallery__caption">
               <div>
                 <span class="hi-gallery__tag">Selección Exclusiva</span>
@@ -358,11 +348,11 @@
             </div>
           </article>
 
-          <article class="hi-gallery__card" data-idx="5" style="background-image:url('assets/img/salon.jpg?v=20261120c')">
+          <article class="hi-gallery__card" data-idx="4" style="background-image:url('assets/img/salon.jpg?v=20261120c')">
             <div class="hi-gallery__caption">
               <div>
                 <span class="hi-gallery__tag">Eventos &amp; Empresas</span>
-                <h3>Salones para Eventos y Capacitaciones</h3>
+                <h3>Salones de eventos</h3>
                 <p>Espacios equipados para reuniones corporativas, talleres y celebraciones familiares.</p>
               </div>
             </div>
@@ -373,7 +363,7 @@
       <div class="hi-gallery__controls">
         <button type="button" class="hi-gallery__btn" id="hi-prev" aria-label="Anterior">&#10094;</button>
         <div class="hi-gallery__progress"><div class="hi-gallery__progress-bar" id="hi-progress"></div></div>
-        <span class="hi-gallery__counter" id="hi-counter">01 / 06</span>
+        <span class="hi-gallery__counter" id="hi-counter">01 / 05</span>
         <button type="button" class="hi-gallery__btn" id="hi-next" aria-label="Siguiente">&#10095;</button>
       </div>
     </section>
