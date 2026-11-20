@@ -203,6 +203,30 @@
     });
   }
 
+  // ===== Enfoque automático en "Nombre completo" al pulsar Consultar disponibilidad / Reservar =====
+  const focusNombreReserva = (e) => {
+    const targetSection = document.getElementById('contacto');
+    const formWrap = document.getElementById('form-wrapper');
+    const toggleReserva = document.getElementById('btn-toggle-reserva');
+    const inputNombre = document.getElementById('f-nombre');
+    if (!targetSection || !inputNombre) return;
+    e.preventDefault();
+
+    if (formWrap && !formWrap.classList.contains('is-open')) {
+      formWrap.classList.add('is-open');
+      if (toggleReserva) toggleReserva.setAttribute('aria-expanded', 'true');
+    }
+
+    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      inputNombre.focus({ preventScroll: true });
+    }, 520);
+  };
+
+  document.querySelectorAll('#btn-rooms-consultar, .btn--nav-cta').forEach((el) => {
+    el.addEventListener('click', focusNombreReserva);
+  });
+
   // ===== Subformulario de Tarifas Corporativas =====
   const btnCorporate = document.getElementById('btn-corporate-wa');
   const corporateWrap = document.getElementById('corporate-form-wrap');
