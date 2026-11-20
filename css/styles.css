@@ -683,109 +683,201 @@ em {
   }
 }
 
-/* ---------- Habitaciones ---------- */
+/* ---------- Habitaciones (Diseño Editorial con Arco Dorado) ---------- */
+.section--rooms {
+  background: var(--crema);
+}
+
+.rooms-head {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rooms-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .95rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #B47E38;
+  margin-bottom: .55rem;
+}
+
+.rooms-eyebrow::before,
+.rooms-eyebrow::after {
+  content: '';
+  width: 44px;
+  height: 1.5px;
+  background: var(--dorado);
+}
+
+.rooms-head h2 {
+  color: var(--verde-dark);
+  margin-bottom: .45rem;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+
 .room {
-  background: var(--blanco);
+  background: #FBF7F1;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 28px rgba(36, 25, 20, .09);
+  border: 1px solid rgba(232, 221, 208, .8);
   display: flex;
   flex-direction: column;
-  transition: transform .4s var(--ease), box-shadow .4s;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .35s var(--ease), box-shadow .35s, border-color .35s;
 }
 
 .room:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-7px);
+  box-shadow: 0 20px 44px rgba(56, 20, 6, .15);
+  border-color: #C99A4E;
+}
+
+.room--featured {
+  border: 1.5px solid #C99A4E;
+  box-shadow: 0 12px 32px rgba(142, 91, 52, .14);
 }
 
 .room__img {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
-  transition: transform .6s var(--ease);
+  overflow: hidden;
 }
 
-.room:hover .room__img {
-  transform: scale(1.04);
+.room__arch {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 30px;
+  display: block;
+  pointer-events: none;
 }
 
 .room__body {
-  padding: 1.5rem;
+  background: #FBF7F1;
+  padding: .45rem 1rem 1.35rem;
+  text-align: center;
+}
+
+.room__body h3 {
+  font-family: var(--font-title);
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--verde-dark);
+  margin: 0;
+}
+
+/* Barra horizontal de comodidades incluidas */
+.rooms-amenities {
+  margin: 2.1rem auto 1.85rem;
+  max-width: 960px;
+  background: #F6EFE6;
+  border: 1px solid var(--arena);
+  border-radius: 14px;
+  padding: .9rem 1.2rem;
   display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(36, 25, 20, .05);
+}
+
+.rooms-amenity {
   flex: 1;
-}
-
-.room__body p {
-  color: var(--gris);
-  font-size: .95rem;
-}
-
-.room__body .link {
-  margin-top: auto;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: .55rem;
-  width: 100%;
-  padding: .78rem 1rem;
-  border-radius: var(--radius-sm);
-  background: transparent;
-  color: var(--terracota);
-  border: 1.5px solid rgba(142, 91, 52, .48);
-  font-weight: 700;
-  font-size: 1.05rem;
-  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
-}
-
-.room__body .link::before {
-  content: '💬';
-  font-size: 1.1rem;
-}
-
-.room__body .link:hover,
-.room__body .link:focus-visible,
-.room__body .link:active {
-  background: var(--verde-dark);
-  color: var(--blanco);
-  border-color: var(--verde-dark);
-  box-shadow: 0 6px 16px rgba(56, 20, 6, .25);
-  transform: translateY(-2px);
-  letter-spacing: 0;
-}
-
-.room--featured {
-  outline: 2px solid var(--dorado);
-}
-
-.pill {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: var(--dorado);
+  gap: .65rem;
+  padding: .25rem .85rem;
   color: var(--carbon);
-  font-size: .75rem;
-  font-weight: 600;
-  padding: .35rem .8rem;
-  border-radius: 999px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-}
-
-.tags li {
-  font-size: .78rem;
-  background: var(--crema);
-  padding: .3rem .7rem;
-  border-radius: 999px;
-  color: var(--verde);
+  font-size: .88rem;
   font-weight: 500;
+  line-height: 1.25;
+}
+
+.rooms-amenity + .rooms-amenity {
+  border-left: 1px solid var(--arena);
+}
+
+.rooms-amenity svg {
+  color: var(--terracota);
+  flex-shrink: 0;
+}
+
+.rooms-cta {
+  text-align: center;
+}
+
+.btn--rooms-cta {
+  height: 54px;
+  padding: 0 2.3rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4D1E0B 0%, #341104 100%);
+  border: 1.5px solid #4D1E0B;
+  color: var(--blanco);
+  font-size: 1rem;
+  font-weight: 600;
+  gap: .75rem;
+  box-shadow: 0 12px 26px rgba(56, 20, 6, .24);
+}
+
+.btn--rooms-cta:hover {
+  background: linear-gradient(180deg, #5E2812 0%, #3E1506 100%);
+  border-color: var(--dorado);
+  color: var(--dorado);
+  box-shadow: 0 14px 30px rgba(56, 20, 6, .32);
+}
+
+@media (max-width: 960px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rooms-amenities {
+    flex-wrap: wrap;
+    gap: .75rem 0;
+  }
+
+  .rooms-amenity {
+    flex: 1 1 33%;
+    border-left: 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .rooms-amenities {
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: .85rem;
+  }
+
+  .rooms-amenity {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .btn--rooms-cta {
+    width: 100%;
+  }
 }
 
 /* ---------- Split (restaurante / eventos / ubicación) ---------- */
