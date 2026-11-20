@@ -20,7 +20,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/recepcion.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=20261120d">
+  <link rel="stylesheet" href="css/styles.css?v=20261120e">
   <style>
     /* Galería deslizante editorial (Carrusel horizontal con vista previa lateral) */
     .hi-gallery { background: var(--crema); padding: clamp(3rem, 7vw, 5rem) 0; overflow: hidden; }
@@ -720,28 +720,52 @@
     <!-- ===== Contacto / Reserva ===== -->
     <section class="section section--cream" id="contacto">
       <div class="container contact contact--modern">
-        <div class="contact__info">
-          <p class="eyebrow">Atención personalizada</p>
+        <div class="contact__info reveal">
+          <p class="rooms-eyebrow">Atención personalizada</p>
           <h2>Reserva directa y sin complicaciones</h2>
           <p class="contact__desc">Garantiza tu habitación en Santa Bárbara con atención inmediata y las mejores tarifas disponibles, comunicándote directamente con recepción.</p>
-          <div class="contact__cta-box">
-            <p class="phone"><a href="tel:+50499377949" id="link-tel">📞 9937-7949</a></p>
-            <p><a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb">Síguenos en Facebook →</a></p>
-          </div>
+
+          <ul class="events-list contact-channels">
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <span>
+                <a href="tel:+50499377949" id="link-tel" class="contact-channel-link">9937-7949</a>
+                <small>Línea directa de recepción</small>
+              </span>
+            </li>
+            <li class="events-list__item">
+              <span class="events-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </span>
+              <span>
+                <a href="https://www.facebook.com/hotelvenecia.SB" target="_blank" rel="noopener" id="link-fb" class="contact-channel-link">Síguenos en Facebook →</a>
+                <small>Novedades y promociones</small>
+              </span>
+            </li>
+          </ul>
+
           <div class="contact__corporate-card">
             <div class="corporate-badge">Tarifas Corporativas</div>
             <p>¿Viajas por trabajo, proyectos o empresas? Ofrecemos convenios y precios especiales para estancias frecuentes o de equipo.</p>
             <a href="https://wa.me/50499377949?text=Hola%2C%20quisiera%20consultar%20tarifas%20corporativas%20y%20convenios%20para%20empresas%20en%20Hotel%20Plaza%20Venecia." class="btn btn--corporate" target="_blank" rel="noopener" id="btn-corporate-wa">
-              <span>💼 Consulta nuestras tarifas corporativas</span> &rarr;
+              <span>Consultar tarifas corporativas</span>
+              <span aria-hidden="true">→</span>
             </a>
           </div>
+
           <button type="button" class="btn btn--toggle-form" id="btn-toggle-reserva" aria-expanded="false" aria-controls="form-wrapper">
             <span class="btn-toggle-text">Llenar solicitud de reserva</span>
             <span class="btn-toggle-icon">▼</span>
           </button>
         </div>
-        <div class="contact__form-wrapper" id="form-wrapper">
-          <form class="form glass" id="form-reserva" novalidate>
+        <div class="contact__form-wrapper reveal" id="form-wrapper">
+          <form class="form contact-form-card" id="form-reserva" novalidate>
             <label>Nombre completo<input type="text" id="f-nombre" required autocomplete="name" placeholder="Ej. Juan Pérez"></label>
             <div class="form__row">
               <label>Fecha de llegada<input type="date" id="f-llegada" required></label>
@@ -765,11 +789,11 @@
             <label>Total de personas<input type="number" id="f-personas" min="1" max="100" value="1"></label>
             <p class="form__hint" id="f-personas-hint" style="font-size:.8rem;color:var(--gris);margin:-.5rem 0 0;display:none;"></p>
             <label>Peticiones especiales o comentarios<textarea id="f-comentarios" rows="3" placeholder="Ej. Llegada tarde, cuna, etc."></textarea></label>
-            <button type="submit" class="btn btn--block btn--whatsapp" id="f-enviar">
-              <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+            <button type="submit" class="btn btn--block btn--events-cta btn--contact-submit" id="f-enviar">
+              <svg viewBox="0 0 32 32" width="19" height="19" fill="currentColor" aria-hidden="true">
                 <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z" />
               </svg>
-              Enviar solicitud por WhatsApp
+              <span>Enviar solicitud por WhatsApp</span>
             </button>
             <p class="form__msg" id="f-msg" role="status"></p>
           </form>
