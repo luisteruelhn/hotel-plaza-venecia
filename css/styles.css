@@ -1891,31 +1891,31 @@ em {
   }
 
   .hero {
-    min-height: 360px;
+    min-height: 290px;
     align-items: center;
   }
 
   .hero__slide {
-    background-position: 62% center;
+    background-position: 88% center;
   }
 
   .hero__slide::after {
-    background: linear-gradient(180deg, rgba(32, 9, 2, .76) 0%, rgba(32, 9, 2, .74) 55%, rgba(32, 9, 2, .52) 100%);
+    background: linear-gradient(180deg, rgba(32, 9, 2, .72) 0%, rgba(32, 9, 2, .68) 55%, rgba(32, 9, 2, .48) 100%);
   }
 
   .hero__content {
-    padding: 2.5rem 0 4.2rem;
+    padding: 1.8rem 0 3.2rem;
     width: min(1180px, 90%);
   }
 
   .hero h1 {
-    font-size: clamp(2.1rem, 8.5vw, 2.8rem);
+    font-size: clamp(2.05rem, 8.2vw, 2.7rem);
     line-height: 1.1;
     text-shadow: 0 3px 18px rgba(18, 5, 1, .75);
   }
 
   .hero__dots {
-    bottom: 2.8rem;
+    bottom: 2.3rem;
   }
 
   .booking-bar-wrap {
