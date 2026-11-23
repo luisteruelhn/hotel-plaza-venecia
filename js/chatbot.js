@@ -27,7 +27,12 @@
         '¡Hola! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?'
     },
     {
-      keywords: ['habitacion', 'habitaciones', 'cuarto', 'cuartos', 'sencilla', 'doble', 'triple', 'suite', 'dormir', 'hospedaje', 'precio', 'tarifa', 'tarifas', 'costo', 'corporativo', 'corporativos', 'especial', 'especiales', 'empresa'],
+      keywords: ['corporativo', 'corporativos', 'convenio', 'convenios', 'empresa', 'empresas', 'institucion', 'instituciones', 'ong', 'proyecto', 'proyectos', 'trabajo'],
+      reply:
+        'Contamos con <strong>tarifas corporativas y convenios</strong> especiales para empresas, organizaciones, instituciones y equipos de trabajo o proyectos. Puedes enviar tu consulta en la sección <a href="#contacto">Atención personalizada</a> o escribirnos directo por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.'
+    },
+    {
+      keywords: ['habitacion', 'habitaciones', 'cuarto', 'cuartos', 'sencilla', 'doble', 'triple', 'suite', 'dormir', 'hospedaje', 'precio', 'tarifa', 'tarifas', 'costo', 'especial', 'especiales'],
       reply:
         'Contamos con 4 tipos de habitaciones cómodas y seguras: <strong>Sencilla</strong>, <strong>Doble</strong>, <strong>Triple</strong> y <strong>Suite</strong>. Además, ofrecemos <strong>tarifas especiales y corporativas</strong>. Para consultar disponibilidad y cotizaciones, escríbenos por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.'
     },
