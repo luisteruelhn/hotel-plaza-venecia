@@ -13,6 +13,30 @@
 
   if (!toggleBtn || !panel || !messagesEl || !form || !input) return;
 
+  const getSaludoHonduras = () => {
+    try {
+      const hora = parseInt(
+        new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Tegucigalpa',
+          hour: 'numeric',
+          hour12: false
+        }).format(new Date()),
+        10
+      );
+      if (hora >= 5 && hora < 12) return 'Buenos días';
+      if (hora >= 12 && hora < 18) return 'Buenas tardes';
+      return 'Buenas noches';
+    } catch {
+      return 'Hola';
+    }
+  };
+
+  // Actualizar saludo inicial del chatbot según horario de Honduras
+  const welcomeMsg = messagesEl.querySelector('.chat-msg--bot');
+  if (welcomeMsg) {
+    welcomeMsg.innerHTML = `¡${getSaludoHonduras()}! Pregúntame sobre nuestras <strong>habitaciones, salones para eventos, Bar Venetto, ubicación</strong> o sobre <strong>Santa Bárbara</strong>.`;
+  }
+
   const normalize = (str) =>
     str
       .toLowerCase()
@@ -23,8 +47,8 @@
   const KNOWLEDGE = [
     {
       keywords: ['hola', 'buenas', 'buenos dias', 'buenas tardes', 'buenas noches', 'saludos', 'hey'],
-      reply:
-        '¡Hola! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?'
+      reply: () =>
+        `¡${getSaludoHonduras()}! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, tarifas corporativas, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?`
     },
     {
       keywords: ['corporativo', 'corporativos', 'convenio', 'convenios', 'empresa', 'empresas', 'institucion', 'instituciones', 'ong', 'proyecto', 'proyectos', 'trabajo'],
@@ -92,7 +116,7 @@
 
     for (const item of KNOWLEDGE) {
       if (item.keywords.some((kw) => clean.includes(kw))) {
-        return item.reply;
+        return typeof item.reply === 'function' ? item.reply() : item.reply;
       }
     }
     return OUT_OF_SCOPE;
