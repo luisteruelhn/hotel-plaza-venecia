@@ -53,7 +53,7 @@
     {
       keywords: ['corporativo', 'corporativos', 'convenio', 'convenios', 'empresa', 'empresas', 'institucion', 'instituciones', 'ong', 'proyecto', 'proyectos', 'trabajo'],
       reply:
-        'Contamos con <strong>tarifas corporativas y convenios</strong> especiales para empresas, organizaciones, instituciones y equipos de trabajo o proyectos. Puedes enviar tu consulta en la sección <a href="#contacto">Atención personalizada</a> o escribirnos directo por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.'
+        'Contamos con <strong>tarifas corporativas y convenios</strong> especiales para empresas, organizaciones, instituciones y equipos de trabajo o proyectos. Puedes enviar tu consulta en la sección <a href="#btn-corporate-wa">Consultar tarifas corporativas</a> o escribirnos directo por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.'
     },
     {
       keywords: ['habitacion', 'habitaciones', 'cuarto', 'cuartos', 'sencilla', 'doble', 'triple', 'suite', 'dormir', 'hospedaje', 'precio', 'tarifa', 'tarifas', 'costo', 'especial', 'especiales'],
@@ -91,9 +91,9 @@
         'En Hotel Plaza Venecia contamos con <strong>estacionamiento propio</strong> y priorizamos un ambiente <strong>seguro, céntrico y familiar</strong>, con atención cercana en recepción.'
     },
     {
-      keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia'],
+      keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia', 'colonial', 'comercial', 'comerciales', 'relax'],
       reply:
-        '<strong>Santa Bárbara</strong> es una ciudad tranquila y hospitalaria en el occidente de Honduras. Puedes visitar su <strong>Parque Central</strong>, la <strong>Catedral</strong>, disfrutar de su ambiente tradicional y explorar sus alrededores naturales como el cercano <strong>Lago de Yojoa</strong>.'
+        '<strong>Santa Bárbara</strong> te recibe con encanto tradicional, <strong>arquitectura colonial</strong> y muchos atractivos turísticos por descubrir. A pocos pasos del hotel puedes recorrer el <strong>Parque Central</strong>, su histórica Catedral, <strong>pequeños centros comerciales</strong> y cafés locales.<br><br>Y si buscas cerrar el día en un ambiente <strong>relax</strong>, te esperamos en nuestro propio <strong>Bar Venetto</strong> dentro del hotel para disfrutar de una bebida con total tranquilidad.'
     },
     {
       keywords: ['junco', 'sombrero', 'artesania', 'artesanias', 'cultura', 'tradicion'],
