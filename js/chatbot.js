@@ -63,7 +63,7 @@
     {
       keywords: ['ubicacion', 'donde estan', 'direccion', 'llegar', 'mapa', 'colonia', 'alfonso', 'parque', 'centro', 'centrico'],
       reply:
-        'Estamos ubicados en <strong>Colonia Alfonso XIII, Santa Bárbara, Honduras</strong>, a pocos pasos al sur del Parque Central. Es una zona céntrica, segura y tranquila.'
+        'Estamos ubicados en <strong>Colonia Alfonso XIII, Santa Bárbara, Honduras</strong>, a pocos pasos al sur del Parque Central. Es una zona céntrica, segura y tranquila. <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras" target="_blank" rel="noopener">Abrir ubicación en Google Maps →</a>'
     },
     {
       keywords: ['restaurante', 'comida', 'desayuno', 'almuerzo', 'cena', 'comer', 'menu'],
