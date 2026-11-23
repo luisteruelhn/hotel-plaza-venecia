@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Chatbot Asistente – Hotel Plaza Venecia & Santa Bárbara
+   Chatbot Asistente – Hotel Venecia & Santa Bárbara
    Limitado exclusivamente a información del hotel y de la ciudad.
    ========================================================================== */
 (() => {
@@ -48,7 +48,7 @@
     {
       keywords: ['hola', 'buenas', 'buenos dias', 'buenas tardes', 'buenas noches', 'saludos', 'hey'],
       reply: () =>
-        `¡${getSaludoHonduras()}! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, tarifas corporativas, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?`
+        `¡${getSaludoHonduras()}! Soy el asistente virtual de <strong>Hotel Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, tarifas corporativas, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?`
     },
     {
       keywords: ['corporativo', 'corporativos', 'convenio', 'convenios', 'empresa', 'empresas', 'institucion', 'instituciones', 'ong', 'proyecto', 'proyectos', 'trabajo'],
@@ -93,7 +93,7 @@
     {
       keywords: ['seguro', 'seguridad', 'familia', 'familiar', 'estacionamiento', 'parqueo', 'recepcion', 'carro', 'vehiculo', 'auto'],
       reply:
-        'En Hotel Plaza Venecia contamos con <strong>estacionamiento propio</strong> y priorizamos un ambiente <strong>seguro, céntrico y familiar</strong>, con atención cercana en recepción.'
+        'En Hotel Venecia contamos con <strong>estacionamiento propio</strong> y priorizamos un ambiente <strong>seguro, céntrico y familiar</strong>, con atención cercana en recepción.'
     },
     {
       keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia', 'colonial', 'comercial', 'comerciales', 'relax'],
@@ -113,7 +113,7 @@
   ];
 
   const OUT_OF_SCOPE =
-    'Lo siento, solo puedo responder preguntas sobre <strong>Hotel Plaza Venecia</strong> (habitaciones, restaurante, Bar Venetto, salones, ubicación y reservas) y sobre <strong>Santa Bárbara</strong>. Si necesitas otra consulta, escríbenos por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.';
+    'Lo siento, solo puedo responder preguntas sobre <strong>Hotel Venecia</strong> (habitaciones, restaurante, Bar Venetto, salones, ubicación y reservas) y sobre <strong>Santa Bárbara</strong>. Si necesitas otra consulta, escríbenos por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a>.';
 
   function findReply(text) {
     const clean = normalize(text);
