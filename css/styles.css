@@ -1341,6 +1341,40 @@ em {
   color: var(--terracota);
 }
 
+.contact-socials-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .55rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  padding: .42rem .85rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--arena);
+  background: var(--blanco);
+  color: var(--verde-dark);
+  font-size: .86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, border-color .2s, color .2s, transform .2s;
+}
+
+.social-pill:hover {
+  background: var(--verde-dark);
+  border-color: var(--verde-dark);
+  color: var(--dorado);
+  transform: translateY(-1px);
+}
+
 /* Tarjeta Corporativa Destacada */
 .contact__corporate-card {
   background: var(--blanco);
