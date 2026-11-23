@@ -24,7 +24,7 @@
     {
       keywords: ['hola', 'buenas', 'buenos dias', 'buenas tardes', 'buenas noches', 'saludos', 'hey'],
       reply:
-        '¡Hola! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, restaurante, Bar Venetto, salones, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?'
+        '¡Hola! Soy el asistente virtual de <strong>Hotel Plaza Venecia</strong>. Puedo ayudarte con información sobre nuestras habitaciones, salones para eventos, Bar Venetto, reservas o sobre <strong>Santa Bárbara</strong>. ¿Qué te gustaría saber?'
     },
     {
       keywords: ['habitacion', 'habitaciones', 'cuarto', 'cuartos', 'sencilla', 'doble', 'triple', 'suite', 'dormir', 'hospedaje', 'precio', 'tarifa', 'tarifas', 'costo', 'corporativo', 'corporativos', 'especial', 'especiales', 'empresa'],
@@ -47,9 +47,9 @@
         '<strong>Bar Venetto</strong> es nuestro espacio ideal para relajarte y compartir un buen momento en un ambiente agradable y seguro dentro del hotel.'
     },
     {
-      keywords: ['salon', 'salones', 'evento', 'eventos', 'boda', 'cumpleanos', 'reunion', 'conferencia', 'fiesta'],
+      keywords: ['salon', 'salones', 'evento', 'eventos', 'boda', 'cumpleanos', 'reunion', 'conferencia', 'fiesta', 'capacitacion', 'capacitaciones', 'proyector', 'audiovisual', 'sonido', 'banquete', 'ejecutivo', 'graduacion', 'bautismo', 'taller'],
       reply:
-        'Contamos con <strong>salones para eventos</strong> ideales para reuniones corporativas, capacitaciones y celebraciones familiares. Puedes cotizar fechas y capacidad por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp (9937-7949)</a>.'
+        'Contamos con <strong>salones para eventos</strong> con capacidad máxima de hasta <strong>50 personas</strong>, ideales para eventos sociales, bodas, graduaciones, reuniones y capacitaciones empresariales. Incluyen opción de <strong>equipo audiovisual</strong> (proyector, pantalla y sonido) y <strong>servicio de comida y bebidas</strong>. Puedes cotizar tu evento en la sección <a href="#eventos">Eventos</a> o por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp (9937-7949)</a>.'
     },
     {
       keywords: ['reservar', 'reserva', 'reservacion', 'disponibilidad', 'telefono', 'whatsapp', 'contacto', 'llamar'],
