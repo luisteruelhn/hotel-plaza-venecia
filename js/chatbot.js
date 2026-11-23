@@ -93,7 +93,7 @@
     {
       keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia', 'colonial', 'comercial', 'comerciales', 'relax'],
       reply:
-        '<strong>Santa Bárbara</strong> es una ciudad llena de encanto y atractivos turísticos. Puedes pasear por el <strong>Parque Central</strong>, visitar sus <strong>pequeños centros comerciales</strong> y apreciar su <strong>arquitectura colonial</strong>. Si buscas un momento de relajación, te recomendamos visitar el <strong>Bar Venetto</strong>. Para llegar, puedes ver nuestra ubicación en <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras" target="_blank" rel="noopener">Google Maps</a>.'
+        '<strong>Santa Bárbara</strong> es una ciudad que tiene su encanto. Puedes pasear por el <strong>Parque Central</strong>, comprar <strong>artesanías</strong> y ver su <strong>arquitectura colonial</strong>. Y si buscas un momento para relajarte, te invitamos a disfrutar en nuestro <strong>Bar Venetto</strong>. Para llegar al hotel, puedes ver nuestra ubicación en <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras" target="_blank" rel="noopener">Google Maps</a>.'
     },
     {
       keywords: ['junco', 'sombrero', 'artesania', 'artesanias', 'cultura', 'tradicion'],
