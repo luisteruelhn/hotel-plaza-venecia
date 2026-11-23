@@ -165,4 +165,27 @@
       handleUserQuery(btn.getAttribute('data-q'));
     });
   }
+
+  // Navegación inteligente desde enlaces internos del chatbot
+  messagesEl.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href === '#btn-corporate-wa') {
+      e.preventDefault();
+      toggleChat(false);
+      const btnCorp = document.getElementById('btn-corporate-wa');
+      const wrapCorp = document.getElementById('corporate-form-wrap');
+      const cardCorp = btnCorp ? btnCorp.closest('.contact__corporate-card') || btnCorp : null;
+      if (cardCorp) cardCorp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (btnCorp && wrapCorp && !wrapCorp.classList.contains('is-open')) {
+        setTimeout(() => btnCorp.click(), 350);
+      } else {
+        const inpEmp = document.getElementById('corp-empresa');
+        if (inpEmp) setTimeout(() => inpEmp.focus({ preventScroll: true }), 400);
+      }
+    } else if (href === '#eventos') {
+      toggleChat(false);
+    }
+  });
 })();
