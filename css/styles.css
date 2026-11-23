@@ -292,7 +292,7 @@ em {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 2.1rem;
+  gap: clamp(.95rem, 1.75vw, 1.85rem);
 }
 
 .nav__socials {
@@ -330,7 +330,7 @@ em {
   text-decoration: none;
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: 1.18rem;
+  font-size: clamp(1rem, 1.12vw, 1.15rem);
   color: var(--carbon);
   position: relative;
   padding-bottom: 4px;
