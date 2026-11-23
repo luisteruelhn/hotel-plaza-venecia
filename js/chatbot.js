@@ -86,7 +86,7 @@
         'Puedes reservar fácilmente enviándonos un mensaje por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp al 9937-7949</a> o usando el formulario de reserva en la sección de Contacto.'
     },
     {
-      keywords: ['redes', 'red social', 'redes sociales', 'facebook', 'instagram', 'tiktok'],
+      keywords: ['redes', 'red social', 'redes sociales', 'facebook', 'instagram', 'tiktok', 'tik tok'],
       reply:
         '¡Claro! Puedes seguirnos en nuestras redes sociales oficiales: <a href="https://www.facebook.com/hotelveneciahn" target="_blank" rel="noopener">Facebook</a>, <a href="https://www.instagram.com/hotelveneciahn/" target="_blank" rel="noopener">Instagram</a> y <a href="https://www.tiktok.com/@hotel.venecia" target="_blank" rel="noopener">TikTok</a>.'
     },
