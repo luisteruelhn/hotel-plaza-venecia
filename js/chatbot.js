@@ -115,7 +115,7 @@
     if (!clean) return OUT_OF_SCOPE;
 
     for (const item of KNOWLEDGE) {
-      if (item.keywords.some((kw) => clean.includes(kw))) {
+      if (item.keywords.some((kw) => new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(clean))) {
         return typeof item.reply === 'function' ? item.reply() : item.reply;
       }
     }
