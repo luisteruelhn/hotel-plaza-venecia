@@ -93,7 +93,7 @@
     {
       keywords: ['santa barbara', 'ciudad', 'pueblo', 'visitar', 'hacer', 'turismo', 'lugares', 'atractivos', 'catedral', 'iglesia', 'colonial', 'comercial', 'comerciales', 'relax'],
       reply:
-        '<strong>Santa Bárbara</strong> te recibe con encanto tradicional, <strong>arquitectura colonial</strong> y muchos atractivos turísticos por descubrir. A pocos pasos del hotel puedes recorrer el <strong>Parque Central</strong>, su histórica Catedral, <strong>pequeños centros comerciales</strong> y cafés locales.<br><br>Y si buscas cerrar el día en un ambiente <strong>relax</strong>, te esperamos en nuestro propio <strong>Bar Venetto</strong> dentro del hotel para disfrutar de una bebida con total tranquilidad.'
+        '<strong>Santa Bárbara</strong> es una ciudad rica en atractivos turísticos. Puedes pasear por el <strong>Parque Central</strong>, visitar sus <strong>pequeños centros comerciales</strong> y apreciar su <strong>arquitectura colonial</strong>. Si buscas un momento de relajación, te recomendamos visitar el <strong>Bar Venetto</strong>. Para llegar, puedes ver nuestra ubicación en <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Venecia+Santa+B%C3%A1rbara+Honduras" target="_blank" rel="noopener">Google Maps</a>.'
     },
     {
       keywords: ['junco', 'sombrero', 'artesania', 'artesanias', 'cultura', 'tradicion'],
@@ -176,13 +176,14 @@
       toggleChat(false);
       const btnCorp = document.getElementById('btn-corporate-wa');
       const wrapCorp = document.getElementById('corporate-form-wrap');
+      const inpEmp = document.getElementById('corp-empresa');
       const cardCorp = btnCorp ? btnCorp.closest('.contact__corporate-card') || btnCorp : null;
       if (cardCorp) cardCorp.scrollIntoView({ behavior: 'smooth', block: 'center' });
       if (btnCorp && wrapCorp && !wrapCorp.classList.contains('is-open')) {
-        setTimeout(() => btnCorp.click(), 350);
-      } else {
-        const inpEmp = document.getElementById('corp-empresa');
-        if (inpEmp) setTimeout(() => inpEmp.focus({ preventScroll: true }), 400);
+        btnCorp.click();
+      }
+      if (inpEmp) {
+        setTimeout(() => inpEmp.focus({ preventScroll: true }), 450);
       }
     } else if (href === '#eventos') {
       toggleChat(false);
