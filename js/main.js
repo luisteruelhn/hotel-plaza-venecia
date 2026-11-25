@@ -389,7 +389,6 @@
   const evGalNext = document.getElementById('ev-gal-next');
   const evSlides = [
     { src: 'assets/img/salon.jpg?v=20261120c', alt: 'Salón para capacitaciones y eventos con proyector en Hotel Plaza Venecia' },
-    { src: 'assets/img/salon-banquete.jpg?v=20261120c', alt: 'Salón montaje banquete con alfombra roja en Hotel Plaza Venecia' },
     { src: 'assets/img/salon-ejecutivo.jpg?v=20261120c', alt: 'Salón ejecutivo con mesa de directorio en Hotel Plaza Venecia' }
   ];
   let evIndex = 0;
@@ -400,7 +399,7 @@
     evGalImg.src = evSlides[evIndex].src;
     evGalImg.alt = evSlides[evIndex].alt;
 
-    const otherIndices = [0, 1, 2].filter((i) => i !== evIndex);
+    const otherIndices = evSlides.map((_, i) => i).filter((i) => i !== evIndex);
     evGalThumbs.forEach((btn, pos) => {
       const targetIdx = otherIndices[pos];
       if (targetIdx === undefined) return;

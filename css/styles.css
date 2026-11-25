@@ -1042,6 +1042,11 @@ em {
   margin-top: 1rem;
 }
 
+.events-gallery__thumbs--single {
+  grid-template-columns: minmax(200px, 280px);
+  justify-content: center;
+}
+
 .events-gallery__thumb {
   border: 2px solid rgba(201, 154, 78, .55);
   border-radius: 14px;
