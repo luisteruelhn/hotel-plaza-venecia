@@ -65,16 +65,19 @@
   document.querySelectorAll('#habitaciones a.room').forEach((card) => {
     card.addEventListener('click', (e) => {
       e.preventDefault();
-      const roomName = card.querySelector('h3')?.textContent?.trim() || 'Habitación';
+      const rawName = card.querySelector('h3')?.textContent?.trim();
+      const label = rawName ? `Habitación ${rawName}` : 'Nuestras habitaciones';
       const bg = card.querySelector('.room__img')?.style.backgroundImage || '';
       const urlMatch = bg.match(/url\(['"]?([^'"]+)['"]?\)/i);
       const imgUrl = urlMatch ? urlMatch[1] : '';
-      const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Venecia para consultar disponibilidad de habitación ${roomName}.`;
+      const msg = rawName
+        ? `${getSaludoHonduras()}, les escribo desde la página web del Hotel Venecia para consultar disponibilidad de habitación ${rawName}.`
+        : `${getSaludoHonduras()}, les escribo desde la página web del Hotel Venecia para consultar disponibilidad de habitaciones.`;
 
       if (lightbox && lightboxImg && imgUrl) {
         lightboxImg.src = imgUrl;
-        lightboxImg.alt = `Habitación ${roomName} - Hotel Venecia`;
-        if (lightboxTitle) lightboxTitle.textContent = `Habitación ${roomName}`;
+        lightboxImg.alt = `${label} - Hotel Venecia`;
+        if (lightboxTitle) lightboxTitle.textContent = label;
         if (lightboxWa) lightboxWa.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
         lightbox.hidden = false;
         document.body.style.overflow = 'hidden';

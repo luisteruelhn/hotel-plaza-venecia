@@ -770,6 +770,15 @@ em {
   gap: 1.4rem;
 }
 
+.rooms-grid.rooms-grid--single {
+  grid-template-columns: minmax(260px, 520px);
+  justify-content: center;
+}
+
+.rooms-grid.rooms-grid--single .room__img {
+  aspect-ratio: 4 / 3;
+}
+
 .room {
   background: #FBF7F1;
   border-radius: var(--radius);
