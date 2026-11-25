@@ -78,7 +78,7 @@
     {
       keywords: ['salon', 'salones', 'evento', 'eventos', 'boda', 'cumpleanos', 'reunion', 'conferencia', 'fiesta', 'capacitacion', 'capacitaciones', 'proyector', 'audiovisual', 'sonido', 'banquete', 'ejecutivo', 'graduacion', 'bautismo', 'taller'],
       reply:
-        'Contamos con <strong>salones para eventos</strong> con capacidad máxima de hasta <strong>50 personas</strong>, ideales para eventos sociales, bodas, graduaciones, reuniones y capacitaciones empresariales. Incluyen opción de <strong>equipo audiovisual</strong> (proyector, pantalla y sonido) y <strong>servicio de comida y bebidas</strong>. Puedes cotizar tu evento en la sección <a href="#eventos">Eventos</a> o por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp (9937-7949)</a>.'
+        'Contamos con <strong>salones para eventos</strong> con capacidad de <strong>35 a 45 personas</strong>, ideales para eventos sociales, bodas, graduaciones, reuniones y capacitaciones empresariales. Incluyen opción de <strong>equipo audiovisual</strong> (proyector, pantalla y sonido) y <strong>servicio de comida y bebidas</strong>. Puedes cotizar tu evento en la sección <a href="#eventos">Eventos</a> o por <a href="https://wa.me/50499377949" target="_blank" rel="noopener">WhatsApp (9937-7949)</a>.'
     },
     {
       keywords: ['reservar', 'reserva', 'reservacion', 'disponibilidad', 'telefono', 'whatsapp', 'contacto', 'llamar'],
