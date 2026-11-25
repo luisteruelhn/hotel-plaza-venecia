@@ -30,12 +30,12 @@
     });
   }
 
-  // Enlaces directos a WhatsApp del segundo número (9615-2657) con saludo y solicitud de información
-  document.querySelectorAll('a[href^="https://wa.me/50496152657"]').forEach((link) => {
+  // Enlaces directos a WhatsApp de los teléfonos de contacto (9937-7949 y 9615-2657)
+  document.querySelectorAll('a[href="https://wa.me/50499377949"]:not(#wa-float):not(#lightbox-wa), a[href="https://wa.me/50496152657"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para solicitar información sobre habitaciones, disponibilidad y servicios.`;
-      window.open(`https://wa.me/50496152657?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      window.open(`${link.href}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     });
   });
 
