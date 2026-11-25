@@ -779,6 +779,15 @@ em {
   aspect-ratio: 3 / 2;
 }
 
+.rooms-caption {
+  text-align: center;
+  font-size: .88rem;
+  font-weight: 400;
+  color: var(--gris);
+  margin: .85rem 0 0;
+  letter-spacing: .04em;
+}
+
 .room {
   background: #FBF7F1;
   border-radius: var(--radius);
