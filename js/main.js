@@ -30,6 +30,15 @@
     });
   }
 
+  // Enlaces directos a WhatsApp del segundo número (9615-2657) con saludo y solicitud de información
+  document.querySelectorAll('a[href^="https://wa.me/50496152657"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const msg = `${getSaludoHonduras()}, les escribo desde la página web del Hotel Plaza Venecia para solicitar información sobre habitaciones, disponibilidad y servicios.`;
+      window.open(`https://wa.me/50496152657?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  });
+
   // Ampliar fotografía al hacer clic en las tarjetas de habitaciones (Lightbox)
   const lightbox = document.getElementById('room-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
